@@ -1,0 +1,15 @@
+{
+  "name": "henry369-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tests/page-contract.mjs",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "latest",
+    "typescript": "latest"
+  }
+}
