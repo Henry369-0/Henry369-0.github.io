@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘柏杨的个人主页。商业分析、策略运营、研究训练与 AI 工作流。">
+  <meta property="og:title" content="刘柏杨｜个人主页">
+  <meta property="og:description" content="商业分析、策略运营、研究训练与 AI 工作流。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="avatar.png">
+  <title>刘柏杨｜个人主页</title>
+  <style>
+    :root {
+      --bg: #f5f8fc;
+      --surface: #ffffff;
+      --ink: #172033;
+      --muted: #647086;
+      --line: #dbe3ef;
+      --blue: #2864dc;
+      --blue-dark: #1e4cad;
+      --pale-blue: #eaf1ff;
+      --shadow: 0 24px 70px rgba(29, 56, 104, .10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      color: white;
+      background: var(--blue);
+      border-radius: 11px;
+      font-size: .78rem;
+      letter-spacing: .04em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .9rem; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-github { color: var(--ink) !important; font-weight: 700; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr);
+      align-items: center;
+      gap: 80px;
+      min-height: 650px;
+      padding: 86px 0 100px;
+    }
+    .hero-kicker { margin: 0 0 20px; color: var(--blue); font-size: .78rem; font-weight: 800; letter-spacing: .14em; }
+    h1 { max-width: 650px; margin: 0; font-size: clamp(3.4rem, 7vw, 6.8rem); line-height: .98; letter-spacing: -.09em; }
+    .hero-lead { max-width: 570px; margin: 28px 0 0; color: var(--muted); font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid var(--blue);
+      border-radius: 12px;
+      color: white;
+      background: var(--blue);
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { background: var(--blue-dark); box-shadow: 0 12px 24px rgba(40, 100, 220, .20); transform: translateY(-2px); }
+    .button.secondary { color: var(--blue); background: transparent; }
+    .button.secondary:hover { color: var(--blue-dark); background: var(--pale-blue); }
+    .hero-note { margin: 30px 0 0; color: var(--muted); font-size: .9rem; }
+
+    .portrait-wrap { position: relative; max-width: 410px; margin-left: auto; }
+    .portrait-card {
+      position: relative;
+      overflow: hidden;
+      padding: 14px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+    .portrait-card img { width: 100%; aspect-ratio: 1 / 1.08; object-fit: cover; border-radius: 18px; background: #eaf3fb; }
+    .portrait-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 8px 5px; }
+    .portrait-caption strong { font-size: 1.05rem; }
+    .portrait-caption span { color: var(--muted); font-size: .8rem; }
+    .portrait-tag {
+      position: absolute;
+      right: -24px;
+      bottom: 36px;
+      padding: 13px 17px;
+      color: var(--blue-dark);
+      background: var(--pale-blue);
+      border: 1px solid #c9d9ff;
+      border-radius: 14px;
+      box-shadow: 0 12px 32px rgba(29, 56, 104, .12);
+      font-size: .82rem;
+      font-weight: 750;
+      transform: rotate(-5deg);
+    }
+
+    .section { padding: 88px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
+    .section-label { margin: 0 0 8px; color: var(--blue); font-size: .78rem; font-weight: 800; letter-spacing: .14em; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.06; letter-spacing: -.07em; }
+    .section-intro { max-width: 460px; margin: 0; color: var(--muted); }
+
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+    .about-copy { margin: 0; font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: 1.5; letter-spacing: -.04em; }
+    .about-copy em { color: var(--blue); font-style: normal; }
+    .focus-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .focus-item { padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+    .focus-item strong { display: block; margin-bottom: 7px; font-size: 1.02rem; }
+    .focus-item span { color: var(--muted); font-size: .9rem; }
+
+    .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .education-card { padding: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+    .education-card.primary { color: white; background: var(--blue); border-color: var(--blue); box-shadow: 0 18px 44px rgba(40, 100, 220, .18); }
+    .education-card .degree { margin: 0 0 28px; color: var(--muted); font-size: .85rem; font-weight: 750; }
+    .education-card.primary .degree, .education-card.primary p { color: #dce8ff; }
+    .education-card h3 { margin: 0; font-size: 1.75rem; letter-spacing: -.05em; }
+    .education-card p { margin: 10px 0 0; color: var(--muted); }
+    .education-card .period { display: block; margin-top: 34px; font-size: .8rem; opacity: .78; }
+
+    .thinking-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .thinking-card { min-height: 245px; padding: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+    .thinking-card .index { display: inline-grid; place-items: center; width: 30px; height: 30px; color: var(--blue); background: var(--pale-blue); border-radius: 9px; font-size: .78rem; font-weight: 800; }
+    .thinking-card h3 { margin: 44px 0 12px; font-size: 1.25rem; letter-spacing: -.04em; }
+    .thinking-card p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .work-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: start; }
+    .work-note { margin: 0; color: var(--muted); line-height: 1.85; }
+    .work-list { display: grid; gap: 13px; }
+    .work-item { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .work-item:last-child { border-bottom: 1px solid var(--line); }
+    .work-item h3 { margin: 0 0 5px; font-size: 1.12rem; }
+    .work-item p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .work-link { flex: 0 0 auto; color: var(--blue); font-size: .88rem; font-weight: 750; }
+
+    .contact-box { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding: 42px; background: var(--ink); border-radius: 28px; color: white; }
+    .contact-box .section-label { color: #8fb2ff; }
+    .contact-box h2 { max-width: 520px; }
+    .contact-box p { max-width: 420px; margin: 18px 0 0; color: #aeb9cc; }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: end; gap: 10px; }
+    .contact-links a { padding: 11px 15px; border: 1px solid #4b5870; border-radius: 10px; color: #f5f8fc; font-size: .9rem; }
+    .contact-links a:hover { border-color: #8fb2ff; background: #263149; }
+    footer { padding: 26px 0 40px; color: var(--muted); font-size: .8rem; }
+
+    @media (max-width: 800px) {
+      .shell { width: min(100% - 30px, 620px); }
+      .nav-links a:not(.nav-github) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 48px; min-height: auto; padding: 58px 0 72px; }
+      .portrait-wrap { width: min(100%, 350px); margin: 0 auto; }
+      .about-grid, .work-layout { grid-template-columns: 1fr; gap: 30px; }
+      .education-grid, .thinking-grid { grid-template-columns: 1fr; }
+      .section { padding: 66px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 15px; }
+      .contact-box { display: block; padding: 28px; }
+      .contact-links { justify-content: start; margin-top: 28px; }
+    }
+    @media (max-width: 460px) {
+      h1 { font-size: 3.25rem; }
+      .focus-list { grid-template-columns: 1fr; }
+      .portrait-tag { right: -8px; }
+      .work-item { align-items: start; flex-direction: column; gap: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="site-nav" aria-label="主导航">
+      <a class="brand" href="#top"><span class="brand-mark">BY</span><span>刘柏杨</span></a>
+      <div class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#education">教育背景</a>
+        <a href="#thinking">思考方式</a>
+        <a href="#work">内容与项目</a>
+        <a class="nav-github" href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <p class="hero-kicker">BUSINESS ANALYSIS · STRATEGY · AI</p>
+          <h1>你好，我是刘柏杨。</h1>
+          <p class="hero-lead">我关注真实业务问题，喜欢把复杂的信息整理清楚，再把分析变成可以沟通、验证和推进的行动。</p>
+          <div class="hero-actions">
+            <a class="button" href="#about">认识我</a>
+            <a class="button secondary" href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">查看 GitHub ↗</a>
+          </div>
+          <p class="hero-note">复旦大学国际商务硕士 · 郑州大学国际经济与贸易本科</p>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait-card">
+            <img src="avatar.png" alt="刘柏杨的卡通头像">
+            <div class="portrait-caption"><strong>刘柏杨</strong><span>持续思考，持续构建</span></div>
+          </div>
+          <div class="portrait-tag">把问题想清楚，再开始行动</div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-head">
+          <div><p class="section-label">ABOUT ME</p><h2>我在寻找<br>问题的结构。</h2></div>
+          <p class="section-intro">这不是一份放大的简历，而是一个让你快速了解我的入口。</p>
+        </div>
+        <div class="about-grid">
+          <p class="about-copy">我的训练横跨经济学、国际商务和业务分析。现在，我更关心的是如何把 <em>模糊的问题</em> 变成清晰的判断，把 AI 放进真实的工作流程。</p>
+          <div class="focus-list">
+            <div class="focus-item"><strong>商业分析</strong><span>从经营目标出发，拆解指标和业务问题。</span></div>
+            <div class="focus-item"><strong>策略运营</strong><span>把研究结论连接到方案、协作与下一步动作。</span></div>
+            <div class="focus-item"><strong>研究训练</strong><span>重视来源、口径、证据和结果边界。</span></div>
+            <div class="focus-item"><strong>AI 工作流</strong><span>让 AI 处理重复环节，人保留判断和复核。</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section">
+        <div class="section-head">
+          <div><p class="section-label">EDUCATION</p><h2>我从哪里来。</h2></div>
+          <p class="section-intro">教育经历给了我方法、视野，也让我学会把学校里的问题带回现实。</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-card primary">
+            <p class="degree">硕士 · 2025 至今</p>
+            <h3>复旦大学</h3>
+            <p>国际商务</p>
+            <span class="period">国际商务 · 企业国际化 · 数据方法 · AI 应用</span>
+          </article>
+          <article class="education-card">
+            <p class="degree">本科 · 2021 - 2025</p>
+            <h3>郑州大学</h3>
+            <p>国际经济与贸易（国际化班）</p>
+            <span class="period">市场调研 · 项目研究 · 毕业论文</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="thinking" class="section">
+        <div class="section-head">
+          <div><p class="section-label">HOW I THINK</p><h2>我的工作方式。</h2></div>
+          <p class="section-intro">我不急着给出答案，先把问题、证据和边界放在同一张桌子上。</p>
+        </div>
+        <div class="thinking-grid">
+          <article class="thinking-card"><span class="index">01</span><h3>先统一口径</h3><p>明确指标定义、时间范围和比较基准，再开始讨论变化和结论。</p></article>
+          <article class="thinking-card"><span class="index">02</span><h3>再拆解结构</h3><p>从总量下钻到场景、人群和执行环节，找到真正可以行动的位置。</p></article>
+          <article class="thinking-card"><span class="index">03</span><h3>最后做复核</h3><p>让 AI 参与整理和重复工作，但把来源检查、判断和最终表达留在人手里。</p></article>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <div class="work-layout">
+          <div>
+            <p class="section-label">SELECTED WORK</p>
+            <h2>一些正在形成的东西。</h2>
+            <p class="work-note">项目不是主页的主角，它们只是让我说清楚自己如何工作、如何学习和如何把想法落地的证据。</p>
+          </div>
+          <div class="work-list">
+            <article class="work-item"><div><h3>AI 辅助分析工作流</h3><p>把资料整理、研究与输出组织成可复用的流程。</p></div><span class="work-link">持续构建中</span></article>
+            <article class="work-item"><div><h3>研究与数据分析练习</h3><p>从经济学训练、课程研究到业务问题的持续练习。</p></div><span class="work-link">持续整理中</span></article>
+            <article class="work-item"><div><h3>更多公开项目</h3><p>整理完成后，会在这里放入真实链接和项目说明。</p></div><a class="work-link" href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">访问 GitHub ↗</a></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="contact-box">
+          <div><p class="section-label">LET'S CONNECT</p><h2>如果你想聊聊一个问题，欢迎联系我。</h2><p>谢谢你来到这里。主页会继续更新，但我希望它始终先是一个真实的个人入口。</p></div>
+          <div class="contact-links"><a href="mailto:liuboyang123450@163.com">发邮件 ↗</a><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+      </section>
+    </main>
+    <footer>© 2026 刘柏杨 · Personal Homepage</footer>
+  </div>
+</body>
+</html>
