@@ -24,7 +24,7 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: auto; }
     body {
       margin: 0;
       color: var(--ink);
@@ -56,7 +56,6 @@
       letter-spacing: .04em;
     }
     .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .9rem; }
-    .nav-links a { transition: color .2s ease; }
     .nav-links a:hover { color: var(--blue); }
     .nav-github { color: var(--ink) !important; font-weight: 700; }
 
@@ -83,9 +82,8 @@
       color: white;
       background: var(--blue);
       font-weight: 750;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
     }
-    .button:hover { background: var(--blue-dark); box-shadow: 0 12px 24px rgba(40, 100, 220, .20); transform: translateY(-2px); }
+    .button:hover { background: var(--blue-dark); }
     .button.secondary { color: var(--blue); background: transparent; }
     .button.secondary:hover { color: var(--blue-dark); background: var(--pale-blue); }
     .hero-note { margin: 30px 0 0; color: var(--muted); font-size: .9rem; }
@@ -219,7 +217,7 @@
         </div>
         <div class="portrait-wrap">
           <div class="portrait-card">
-            <img src="avatar.png" alt="刘柏杨的卡通头像">
+            <img src="avatar.png" alt="刘柏杨的正式肖像">
             <div class="portrait-caption"><strong>刘柏杨</strong><span>持续思考，持续构建</span></div>
           </div>
           <div class="portrait-tag">把问题想清楚，再开始行动</div>
