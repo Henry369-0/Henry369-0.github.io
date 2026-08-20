@@ -59,7 +59,8 @@
     .hero-character-stage::before { position: absolute; z-index: -1; inset: 5% -30% -6%; background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(198, 216, 233, .24), transparent 46%); content: ""; filter: blur(18px); transition: background-position .16s ease-out; }
     .hero-character { position: relative; width: auto; height: 100%; aspect-ratio: 2 / 3; margin: 0 auto; transform: translate3d(var(--x), var(--y), 20px) rotateX(var(--rx)) rotateY(var(--ry)); transform-origin: 50% 69%; transform-style: preserve-3d; transition: transform .16s ease-out; will-change: transform; }
     .hero-character::after { position: absolute; z-index: -1; right: 10%; bottom: 1%; left: 10%; height: 22%; border-radius: 50%; background: rgba(0, 0, 0, .65); content: ""; filter: blur(30px); transform: translateZ(-20px); }
-    .hero-character img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); }
+    .character-view { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); transition: opacity .18s ease-out; will-change: opacity; }
+    .character-view[data-view="center"] { opacity: 1; }
     .hero-intro { position: absolute; z-index: 4; bottom: clamp(54px, 7vw, 92px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); width: min(276px, 31vw); margin: 0; color: #d7d8d5; font-size: clamp(.78rem, 1.2vw, 1rem); letter-spacing: .025em; }
     .hero-intro strong { color: var(--cream); font-weight: 850; }
     .hero-cta { position: absolute; z-index: 4; right: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); bottom: clamp(56px, 7vw, 94px); display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 27px; border: 1px solid rgba(232, 218, 197, .8); border-radius: 999px; color: var(--cream); box-shadow: 0 0 0 4px rgba(232, 218, 197, .06), inset 0 0 18px rgba(232, 218, 197, .06); font-size: .78rem; font-weight: 850; letter-spacing: .08em; transition: background .2s ease, color .2s ease, transform .2s ease; }
@@ -165,7 +166,11 @@
     <section class="panel hero" id="home" data-panel="0" aria-label="首页">
       <h1 class="hero-name reveal delay-1"><span>LIU</span><span>BOYANG</span></h1>
       <div class="hero-character-stage reveal delay-2" id="heroStage" aria-hidden="true">
-        <div class="hero-character" id="heroCharacter"><img src="hero-character.png" width="1024" height="1536" alt=""></div>
+        <div class="hero-character" id="heroCharacter">
+          <img class="character-view" data-view="left" src="hero-character-left.png" width="1024" height="1536" alt="">
+          <img class="character-view" data-view="center" src="hero-character.png" width="1024" height="1536" alt="">
+          <img class="character-view" data-view="right" src="hero-character-right.png" width="1024" height="1536" alt="">
+        </div>
       </div>
       <p class="hero-intro reveal delay-2"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士。关注商业分析、策略运营与 AI 工作流。</p>
       <a class="hero-cta reveal delay-2" href="#contact">联系我 ↗</a>
@@ -218,6 +223,7 @@
     const controls = [...document.querySelectorAll('[data-target]')];
     const hero = document.getElementById('home');
     const heroStage = document.getElementById('heroStage');
+    const characterViews = heroStage ? Object.fromEntries([...heroStage.querySelectorAll('[data-view]')].map((view) => [view.dataset.view, view])) : {};
     let activeIndex = 0;
     let switching = false;
 
@@ -258,17 +264,24 @@
         const rect = hero.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width - .5) * 2;
         const y = ((event.clientY - rect.top) / rect.height - .5) * 2;
-        heroStage.style.setProperty('--x', `${x * 15}px`);
-        heroStage.style.setProperty('--y', `${y * 9}px`);
-        heroStage.style.setProperty('--rx', `${-y * 5}deg`);
-        heroStage.style.setProperty('--ry', `${x * 9}deg`);
+        heroStage.style.setProperty('--x', `${x * 10}px`);
+        heroStage.style.setProperty('--y', `${y * 7}px`);
+        heroStage.style.setProperty('--rx', `${-y * 3.5}deg`);
+        heroStage.style.setProperty('--ry', `${x * 4.5}deg`);
         heroStage.style.setProperty('--light-x', `${50 + x * 18}%`);
         heroStage.style.setProperty('--light-y', `${50 + y * 12}%`);
+        const turn = Math.min(1, Math.abs(x) * 1.72);
+        if (characterViews.center) characterViews.center.style.opacity = String(1 - turn);
+        if (characterViews.left) characterViews.left.style.opacity = String(x < 0 ? turn : 0);
+        if (characterViews.right) characterViews.right.style.opacity = String(x > 0 ? turn : 0);
       });
       hero.addEventListener('pointerleave', () => {
         ['--x', '--y', '--rx', '--ry'].forEach((name) => heroStage.style.setProperty(name, '0px'));
         heroStage.style.setProperty('--rx', '0deg'); heroStage.style.setProperty('--ry', '0deg');
         heroStage.style.setProperty('--light-x', '50%'); heroStage.style.setProperty('--light-y', '50%');
+        if (characterViews.center) characterViews.center.style.opacity = '1';
+        if (characterViews.left) characterViews.left.style.opacity = '0';
+        if (characterViews.right) characterViews.right.style.opacity = '0';
       });
     }
   </script>
