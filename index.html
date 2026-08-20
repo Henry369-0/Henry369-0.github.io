@@ -167,9 +167,9 @@
       <h1 class="hero-name reveal delay-1"><span>LIU</span><span>BOYANG</span></h1>
       <div class="hero-character-stage reveal delay-2" id="heroStage" aria-hidden="true">
         <div class="hero-character" id="heroCharacter">
-          <img class="character-view" data-view="left" src="hero-character-left.png" width="1024" height="1536" alt="">
-          <img class="character-view" data-view="center" src="hero-character.png" width="1024" height="1536" alt="">
-          <img class="character-view" data-view="right" src="hero-character-right.png" width="1024" height="1536" alt="">
+          <img class="character-view" data-view="left" data-src="hero-character-left.png" width="1024" height="1536" alt="">
+          <img class="character-view" data-view="center" src="hero-character.png" width="1024" height="1536" decoding="async" fetchpriority="high" alt="">
+          <img class="character-view" data-view="right" data-src="hero-character-right.png" width="1024" height="1536" alt="">
         </div>
       </div>
       <p class="hero-intro reveal delay-2"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士。关注商业分析、策略运营与 AI 工作流。</p>
@@ -224,6 +224,8 @@
     const hero = document.getElementById('home');
     const heroStage = document.getElementById('heroStage');
     const characterViews = heroStage ? Object.fromEntries([...heroStage.querySelectorAll('[data-view]')].map((view) => [view.dataset.view, view])) : {};
+    let alternateViewsReady = false;
+    let alternateViewsLoading;
     let activeIndex = 0;
     let switching = false;
 
@@ -259,8 +261,22 @@
       if (['ArrowUp', 'PageUp'].includes(event.key)) { event.preventDefault(); goTo(activeIndex - 1); }
     });
 
+    function loadAlternateViews() {
+      if (alternateViewsReady) return Promise.resolve();
+      if (!alternateViewsLoading) {
+        const alternateViews = [characterViews.left, characterViews.right].filter(Boolean);
+        alternateViewsLoading = Promise.all(alternateViews.map((view) => {
+          view.src = view.dataset.src;
+          return view.decode ? view.decode().catch(() => undefined) : Promise.resolve();
+        })).then(() => { alternateViewsReady = true; });
+      }
+      return alternateViewsLoading;
+    }
+
     if (hero && heroStage && desktopPointer.matches && !reduced.matches) {
+      hero.addEventListener('pointerenter', loadAlternateViews, { once: true });
       hero.addEventListener('pointermove', (event) => {
+        if (!alternateViewsReady) { loadAlternateViews(); return; }
         const rect = hero.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width - .5) * 2;
         const y = ((event.clientY - rect.top) / rect.height - .5) * 2;
