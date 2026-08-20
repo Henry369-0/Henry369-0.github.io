@@ -3,230 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="刘柏杨的个人能力说明书：商业分析、策略运营与 AI 工作流。">
-  <meta property="og:title" content="刘柏杨｜商业分析 · 策略运营 · AI 工作流">
-  <meta property="og:description" content="把复杂业务问题，变成可验证的判断与行动。">
+  <meta name="description" content="刘柏杨的个人主页。复旦大学国际商务硕士，关注商业分析、策略运营与 AI 工作流。">
+  <meta property="og:title" content="LIU BOYANG｜刘柏杨">
+  <meta property="og:description" content="有想法，靠得住，能及时把事情往前推。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="avatar.png">
-  <title>刘柏杨｜商业分析 · 策略运营 · AI 工作流</title>
+  <meta name="theme-color" content="#0c0c0c">
+  <title>LIU BOYANG｜刘柏杨</title>
   <style>
-    :root {
-      --paper: #f4f1ea;
-      --ink: #181816;
-      --muted: #66645f;
-      --line: #d8d3c8;
-      --accent: #b6402e;
-      --soft: #e9e4da;
-      --max: 1160px;
-    }
+    :root { --black:#0c0c0c; --ink:#e7e8e8; --muted:#9a9b9d; --line:rgba(231,232,232,.16); --silver-a:#5e646d; --silver-b:#d3dce3; --cream:#e7d9c4; --cream-dark:#c7b18e; --max:1320px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--black); }
+    body { margin:0; overflow-x:hidden; background:var(--black); color:var(--ink); font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    img { display:block; max-width:100%; }
+    :focus-visible { outline:2px solid var(--cream); outline-offset:5px; }
+    .shell { width:min(var(--max),calc(100% - 64px)); margin:0 auto; }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: auto; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
-      line-height: 1.65;
-    }
-    a { color: inherit; text-underline-offset: 4px; }
-    img { display: block; max-width: 100%; }
-    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .hero { position:relative; isolation:isolate; min-height:100svh; overflow:hidden; background:radial-gradient(circle at 50% 52%,rgba(75,84,96,.19),transparent 31%),var(--black); }
+    .hero::after { position:absolute; z-index:-1; right:-12vw; bottom:-24vw; width:54vw; height:54vw; border-radius:50%; background:radial-gradient(circle,rgba(103,117,135,.13),transparent 65%); content:""; pointer-events:none; }
+    .nav { position:relative; z-index:4; display:flex; align-items:center; justify-content:space-between; min-height:88px; border-bottom:1px solid var(--line); color:#d9dde0; font-size:.83rem; font-weight:800; letter-spacing:.1em; }
+    .nav-brand { color:var(--cream); letter-spacing:.14em; }
+    .nav-links { display:flex; gap:clamp(18px,3vw,48px); }
+    .nav-links a { transition:color .2s ease; }
+    .nav-links a:hover { color:var(--cream); }
+    .hero-wordmark { position:absolute; z-index:0; top:clamp(116px,15vh,172px); left:50%; width:100%; margin:0; transform:translateX(-50%); color:transparent; background:linear-gradient(180deg,var(--silver-a) 0%,var(--silver-b) 60%,#858f99 100%); -webkit-background-clip:text; background-clip:text; font-family:Impact,"Arial Black","PingFang SC",sans-serif; font-size:clamp(4rem,10.8vw,11rem); font-weight:900; letter-spacing:-.07em; line-height:.78; text-align:center; white-space:nowrap; user-select:none; }
+    .character-stage { position:absolute; z-index:2; bottom:0; left:50%; width:auto; height:min(78svh,790px); transform:translateX(-50%); pointer-events:none; }
+    .character { --move-x:0px; --move-y:0px; --tilt:0deg; position:relative; width:auto; height:100%; aspect-ratio:2 / 3; transform:translate3d(var(--move-x),var(--move-y),0) rotate(var(--tilt)); transform-origin:50% 70%; transition:transform .18s ease-out; will-change:transform; }
+    .character img { width:100%; height:100%; mix-blend-mode:screen; object-fit:cover; -webkit-mask-image:radial-gradient(ellipse 58% 71% at 50% 48%,#000 62%,transparent 90%); mask-image:radial-gradient(ellipse 58% 71% at 50% 48%,#000 62%,transparent 90%); }
+    .pupil { --pupil-x:0px; --pupil-y:0px; position:absolute; width:3.1%; aspect-ratio:1; border-radius:50%; background:#211711; box-shadow:inset -.8px -.8px 1px rgba(0,0,0,.35),.5px .5px 0 rgba(255,255,255,.15); transform:translate3d(var(--pupil-x),var(--pupil-y),0); transition:transform .12s linear; }
+    .pupil.left { top:31.4%; left:42.4%; }
+    .pupil.right { top:31.4%; left:56.6%; }
+    .hero-bottom { position:absolute; z-index:3; right:0; bottom:clamp(28px,5vw,64px); left:0; display:flex; align-items:end; justify-content:space-between; gap:32px; }
+    .hero-intro { width:min(255px,38vw); margin:0; color:#d6d9dc; font-size:clamp(.78rem,1.25vw,1rem); font-weight:500; letter-spacing:.04em; }
+    .hero-intro strong { color:var(--cream); font-weight:800; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 26px; border:1px solid rgba(231,217,196,.82); border-radius:999px; color:var(--cream); box-shadow:0 0 0 4px rgba(231,217,196,.07),inset 0 0 18px rgba(231,217,196,.06); font-size:.79rem; font-weight:850; letter-spacing:.08em; transition:background .2s ease,color .2s ease,transform .2s ease; }
+    .button:hover { background:var(--cream); color:var(--black); transform:translateY(-2px); }
+    .scroll-note { position:absolute; z-index:3; bottom:16px; left:50%; color:var(--muted); font-size:.67rem; letter-spacing:.16em; transform:translateX(-50%); }
 
-    .topbar { display: flex; align-items: center; justify-content: space-between; min-height: 78px; border-bottom: 1px solid var(--line); }
-    .wordmark { font-weight: 750; letter-spacing: -.04em; }
-    .nav { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: .88rem; }
-    .nav a:hover, .text-link:hover { color: var(--accent); }
-    .nav .github { color: var(--ink); font-weight: 700; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-
-    .hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 82px; align-items: center; padding: 86px 0 92px; border-bottom: 1px solid var(--line); }
-    .eyebrow, .case-kicker, .meta-label { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
-    .hero h1 { max-width: 780px; margin: 20px 0 24px; font-family: "Noto Serif SC", "Songti SC", serif; font-size: clamp(3.2rem, 6.2vw, 6.2rem); font-weight: 700; line-height: 1.08; letter-spacing: -.07em; }
-    .identity { margin: 0; font-size: 1.1rem; font-weight: 700; }
-    .hero-copy { max-width: 690px; margin: 0; color: var(--muted); font-size: 1.08rem; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 28px; color: var(--muted); font-size: .84rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 32px; }
-    .button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 17px; border: 1px solid var(--accent); border-radius: 7px; color: var(--paper); background: var(--accent); font-weight: 750; }
-    .button:hover { background: #963423; }
-    .text-link { color: var(--accent); font-weight: 750; }
-    .portrait { width: min(100%, 300px); margin-left: auto; }
-    .portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border: 1px solid var(--line); }
-    .portrait figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 11px; color: var(--muted); font-size: .75rem; }
-
-    .section { padding: 78px 0; border-bottom: 1px solid var(--line); }
-    .section-heading { display: grid; grid-template-columns: 150px 1fr; gap: 26px; align-items: baseline; margin-bottom: 38px; }
-    .section-heading h2 { margin: 0; font-family: "Noto Serif SC", "Songti SC", serif; font-size: clamp(2.1rem, 4vw, 3.8rem); line-height: 1.1; letter-spacing: -.06em; }
-    .section-intro { max-width: 600px; margin: -18px 0 34px 176px; color: var(--muted); }
-
-    .case-list { display: grid; gap: 0; }
-    .case { display: grid; grid-template-columns: 150px 1fr 220px; gap: 26px; padding: 30px 0; border-top: 1px solid var(--line); }
-    .case:last-child { border-bottom: 1px solid var(--line); }
-    .case-number { color: var(--accent); font-family: Georgia, serif; font-size: 2.1rem; line-height: 1; }
-    .case h3 { margin: 0 0 12px; font-size: 1.45rem; letter-spacing: -.04em; }
-    .case .problem { margin: 0 0 18px; color: var(--muted); }
-    .case-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .case-body p { margin: 0; font-size: .88rem; }
-    .case-body strong { display: block; margin-bottom: 5px; font-size: .75rem; letter-spacing: .05em; }
-    .case-side { color: var(--muted); font-size: .82rem; }
-    .case-side p { margin: 0 0 16px; }
-    .case-side strong { color: var(--ink); }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag { padding: 3px 7px; border: 1px solid var(--line); color: var(--muted); font-size: .7rem; }
-
-    .process { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .process-step { min-height: 180px; padding: 23px 20px 20px 0; border-right: 1px solid var(--line); }
-    .process-step + .process-step { padding-left: 20px; }
-    .process-step:last-child { border-right: 0; }
-    .process-step .step-no { color: var(--accent); font-family: Georgia, serif; font-size: 1.5rem; }
-    .process-step h3 { margin: 30px 0 7px; font-size: 1.02rem; }
-    .process-step p { margin: 0; color: var(--muted); font-size: .84rem; }
-
-    .profile-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; }
-    .profile-copy { margin: 0; font-family: "Noto Serif SC", "Songti SC", serif; font-size: 1.45rem; line-height: 1.65; }
-    .profile-copy em { color: var(--accent); font-style: normal; }
-    .timeline { border-top: 1px solid var(--line); }
-    .timeline-item { display: grid; grid-template-columns: 145px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .timeline-item .year { color: var(--muted); font-size: .8rem; }
-    .timeline-item h3 { margin: 0; font-size: 1.1rem; }
-    .timeline-item p { margin: 4px 0 0; color: var(--muted); font-size: .88rem; }
-    .skills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 26px; }
-    .skill { padding: 5px 9px; background: var(--soft); font-size: .76rem; }
-
-    .building { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .building h3 { margin: 0; font-size: 1.45rem; }
-    .building p { max-width: 520px; margin: 10px 0 0; color: var(--muted); }
-    .building-status { padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .building-status strong { display: block; margin-bottom: 8px; }
-    .building-status span { color: var(--muted); font-size: .88rem; }
-
-    .contact { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; padding-bottom: 100px; }
-    .contact h2 { max-width: 720px; margin: 16px 0 0; font-family: "Noto Serif SC", "Songti SC", serif; font-size: clamp(2.1rem, 4vw, 4rem); line-height: 1.12; letter-spacing: -.06em; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 17px; justify-content: end; }
-    footer { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0 38px; color: var(--muted); font-size: .76rem; }
-
-    @media (max-width: 850px) {
-      .wrap { width: min(100% - 32px, 620px); }
-      .nav a:not(.github) { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 44px; padding: 60px 0 72px; }
-      .portrait { margin-left: 0; width: min(100%, 290px); }
-      .section-heading { grid-template-columns: 1fr; gap: 8px; }
-      .section-intro { margin: -16px 0 30px; }
-      .case { grid-template-columns: 42px 1fr; gap: 18px; }
-      .case-side { grid-column: 2; padding-top: 5px; }
-      .case-body { grid-template-columns: 1fr; gap: 13px; }
-      .process { grid-template-columns: 1fr 1fr; }
-      .process-step:nth-child(2) { border-right: 0; }
-      .process-step:nth-child(n+3) { border-top: 1px solid var(--line); }
-      .profile-grid, .building { grid-template-columns: 1fr; gap: 38px; }
-      .contact { grid-template-columns: 1fr; align-items: start; }
-      .contact-links { justify-content: start; }
-    }
-    @media (max-width: 500px) {
-      .hero h1 { font-size: 3rem; }
-      .case { grid-template-columns: 1fr; }
-      .case-side { grid-column: auto; }
-      .process { grid-template-columns: 1fr; }
-      .process-step, .process-step + .process-step { min-height: 0; padding: 20px 0; border-right: 0; border-top: 1px solid var(--line); }
-      .process-step:first-child { border-top: 0; }
-      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
-      footer { display: block; }
-    }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+    .section { padding:clamp(90px,13vw,180px) 0; border-top:1px solid var(--line); }
+    .eyebrow { margin:0 0 18px; color:var(--cream-dark); font-size:.72rem; font-weight:850; letter-spacing:.15em; }
+    h2 { max-width:930px; margin:0; font-size:clamp(2.45rem,5.5vw,6.2rem); font-weight:800; letter-spacing:-.065em; line-height:.98; }
+    .about-grid { display:grid; grid-template-columns:minmax(250px,.8fr) minmax(330px,1.2fr); gap:clamp(46px,10vw,150px); align-items:center; }
+    .formal-photo { position:relative; max-width:340px; }
+    .formal-photo::before { position:absolute; z-index:-1; top:-20px; right:-20px; width:100%; height:100%; border:1px solid rgba(231,217,196,.37); content:""; }
+    .formal-photo img { width:100%; filter:grayscale(10%) contrast(1.04); }
+    .about-copy { max-width:650px; font-size:clamp(1.35rem,2.15vw,2.25rem); font-weight:550; letter-spacing:-.04em; line-height:1.38; }
+    .about-copy em { color:var(--cream); font-style:normal; }
+    .about-copy p { margin:0; }
+    .about-copy p + p { margin-top:22px; color:var(--muted); font-size:.98rem; font-weight:400; letter-spacing:0; line-height:1.75; }
+    .principles { display:grid; grid-template-columns:repeat(3,1fr); margin-top:82px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .principle { min-height:230px; padding:28px clamp(18px,3vw,46px) 30px 0; }
+    .principle + .principle { padding-left:clamp(18px,3vw,46px); border-left:1px solid var(--line); }
+    .principle-no { color:var(--cream-dark); font-family:Georgia,serif; font-size:1.25rem; }
+    .principle h3 { margin:60px 0 9px; font-size:1.35rem; letter-spacing:-.04em; }
+    .principle p { margin:0; color:var(--muted); font-size:.9rem; }
+    .education-list { margin-top:64px; border-top:1px solid var(--line); }
+    .education-item { display:grid; grid-template-columns:1fr 2.4fr auto; gap:24px; align-items:baseline; padding:26px 0; border-bottom:1px solid var(--line); }
+    .education-item .year { color:var(--muted); font-size:.82rem; }
+    .education-item h3 { margin:0; font-size:clamp(1.45rem,3vw,2.6rem); letter-spacing:-.05em; }
+    .education-item p { max-width:350px; margin:0; color:var(--muted); font-size:.88rem; text-align:right; }
+    .work-list { margin-top:66px; }
+    .work-item { display:grid; grid-template-columns:84px minmax(0,1fr) minmax(190px,.6fr); gap:24px; padding:28px 0; border-top:1px solid var(--line); }
+    .work-item:last-child { border-bottom:1px solid var(--line); }
+    .work-index { color:var(--cream-dark); font-family:Georgia,serif; font-size:1.3rem; }
+    .work-item h3 { margin:0; font-size:clamp(1.25rem,2.5vw,2rem); letter-spacing:-.05em; }
+    .work-item p { margin:10px 0 0; color:var(--muted); font-size:.92rem; }
+    .work-tag { align-self:start; color:#c8cbcf; font-size:.76rem; letter-spacing:.06em; text-align:right; }
+    .contact { display:grid; grid-template-columns:1fr auto; gap:46px; align-items:end; }
+    .contact h2 { max-width:780px; }
+    .contact-links { display:grid; gap:14px; min-width:230px; }
+    .contact-links a { color:var(--cream); font-weight:750; text-decoration:underline; text-decoration-color:rgba(231,217,196,.38); text-underline-offset:6px; }
+    footer { display:flex; justify-content:space-between; gap:24px; padding:28px 0 38px; border-top:1px solid var(--line); color:#77787b; font-size:.74rem; }
+    .js .reveal { opacity:0; transform:translateY(20px); animation:reveal .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .js .reveal.one { animation-delay:.08s; }
+    .js .reveal.two { animation-delay:.18s; }
+    .js .reveal.three { animation-delay:.34s; }
+    @keyframes reveal { to { opacity:1; transform:translateY(0); } }
+    .js .hero-wordmark.reveal { transform:translateX(-50%) translateY(20px); animation-name:reveal-wordmark; }
+    .js .character-stage.reveal { transform:translateX(-50%) translateY(20px); animation-name:reveal-stage; }
+    @keyframes reveal-wordmark { to { opacity:1; transform:translateX(-50%) translateY(0); } }
+    @keyframes reveal-stage { to { opacity:1; transform:translateX(-50%) translateY(0); } }
+    @media (max-width:780px) { .shell { width:min(100% - 36px,620px); } .nav { min-height:72px; } .nav-links { gap:14px; font-size:.67rem; letter-spacing:.06em; } .hero-wordmark { top:19vh; font-size:17.6vw; letter-spacing:-.08em; } .character-stage { height:72svh; bottom:44px; } .hero-bottom { bottom:54px; align-items:end; } .hero-intro { width:172px; font-size:.7rem; } .button { min-height:44px; padding:0 17px; font-size:.68rem; } .scroll-note { display:none; } .about-grid,.contact { grid-template-columns:1fr; } .formal-photo { max-width:260px; } .principles { grid-template-columns:1fr; } .principle { min-height:0; padding:24px 0; } .principle + .principle { padding-left:0; border-top:1px solid var(--line); border-left:0; } .principle h3 { margin-top:28px; } .education-item,.work-item { grid-template-columns:1fr; gap:7px; } .education-item p,.work-tag { text-align:left; } .work-index { margin-bottom:8px; } .contact-links { min-width:0; } }
+    @media (max-width:470px) { .nav-brand { display:none; } .nav { justify-content:center; } .hero-wordmark { top:24vh; font-size:17vw; } .character-stage { bottom:54px; height:70svh; } .hero-bottom { bottom:26px; justify-content:flex-end; } .hero-intro { display:none; } h2 { font-size:2.5rem; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; } }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="wordmark" href="#top">刘柏杨</a>
-      <nav class="nav" aria-label="主导航">
-        <a href="#cases">代表案例</a>
-        <a href="#method">工作方式</a>
-        <a href="#profile">关于我</a>
-        <a href="#contact">联系</a>
-        <a class="github" href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div>
-          <p class="eyebrow">刘柏杨｜商业分析 · 策略运营 · AI 工作流</p>
-          <h1>把复杂业务问题，变成可验证的判断与行动。</h1>
-          <p class="identity">复旦大学国际商务硕士在读，具备即时配送、电商类目与运营数据分析经历。</p>
-          <p class="hero-copy">我关注经营目标、指标口径和策略落地，也在持续把 AI 沉淀为可复用的分析工作流。</p>
-          <div class="hero-meta"><span>SQL</span><span>Python</span><span>Excel</span><span>Tableau</span><span>AI Agent</span></div>
-          <div class="hero-actions"><a class="button" href="#cases">查看代表案例</a><a class="text-link" href="#contact">联系我 ↗</a></div>
-        </div>
-        <figure class="portrait"><img src="avatar.png" width="716" height="895" alt="刘柏杨的正式肖像"><figcaption><span>商业分析 / 策略运营</span><span>上海</span></figcaption></figure>
-      </section>
-
-      <section id="cases" class="section">
-        <div class="section-heading"><p class="eyebrow">01 / SELECTED CASES</p><h2>三个代表性问题。</h2></div>
-        <p class="section-intro">主页不复述简历，而是用三个决策问题说明我如何工作。结果边界和个人贡献会被明确写出。</p>
-        <div class="case-list">
-          <article class="case">
-            <div class="case-number">A</div>
-            <div>
-              <p class="case-kicker">即时配送 · 经营分析</p>
-              <h3>如何在成本、履约和供给之间做取舍？</h3>
-              <p class="problem">运力模式切换并不是单一成本问题，需要把城市、商圈和运力结构放在同一张评估表里。</p>
-              <div class="case-body"><p><strong>我的动作</strong>统一成本、履约和有效运力口径，搭建分层评估与 Top 拖累定位。</p><p><strong>形成的判断</strong>从总量下钻到可行动单元，再讨论不同模式的适用边界。</p><p><strong>证据状态</strong>已确认口径：8 城、首批 109 个切换点位；阶段结果按阶段口径呈现。</p></div>
-            </div>
-            <aside class="case-side"><p><strong>结果边界</strong><br>阶段结果，不写成长期业务收益。</p><div class="tags"><span class="tag">指标拆解</span><span class="tag">策略测算</span></div></aside>
-          </article>
-          <article class="case">
-            <div class="case-number">B</div>
-            <div>
-              <p class="case-kicker">电商经营 · 模式设计</p>
-              <h3>线上交易无法承接线下服务，如何补齐闭环？</h3>
-              <p class="problem">Auto & Motor 商品涉及安装、维修和售后，单纯把商品搬到线上并不能解决用户与商家的交易摩擦。</p>
-              <div class="case-body"><p><strong>我的动作</strong>完成行业研究、模式拆解、Proposal，以及数字券和线下核销机制设计。</p><p><strong>形成的判断</strong>先解决服务承接与核销，再讨论线上交易规模化。</p><p><strong>证据状态</strong>推进 30 家试点商家；20%+ 明确为项目预估，不写成已实现结果。</p></div>
-            </div>
-            <aside class="case-side"><p><strong>结果边界</strong><br>试点推进与项目预估分开表达。</p><div class="tags"><span class="tag">行业研究</span><span class="tag">机制设计</span></div></aside>
-          </article>
-          <article class="case">
-            <div class="case-number">C</div>
-            <div>
-              <p class="case-kicker">AI 应用 · 商业分析</p>
-              <h3>如何把临时分析变成可复用的工作流？</h3>
-              <p class="problem">找 SQL、确认口径、跨工具取数和结果复用成本高，AI 的价值不只是生成答案，而是进入一套有校验的流程。</p>
-              <div class="case-body"><p><strong>我的动作</strong>参与设计分档流程、标准结果包和验收机制，整理业务口径与分析步骤。</p><p><strong>形成的判断</strong>把 AI 放进重复环节，把来源检查、口径判断和最终表达留在人手里。</p><p><strong>证据状态</strong>项目材料记录约 1,419 行 PRD、14 项验收用例和阶段使用与分享范围。</p></div>
-            </div>
-            <aside class="case-side"><p><strong>结果边界</strong><br>个人动作、团队使用和项目记录分开表达。</p><div class="tags"><span class="tag">AI Workflow</span><span class="tag">质量控制</span></div></aside>
-          </article>
-        </div>
-      </section>
-
-      <section id="method" class="section">
-        <div class="section-heading"><p class="eyebrow">02 / HOW I WORK</p><h2>一条可复用的工作路径。</h2></div>
-        <div class="process">
-          <article class="process-step"><span class="step-no">01</span><h3>定义问题与口径</h3><p>先确认业务目标、指标定义、时间范围和可用证据。</p></article>
-          <article class="process-step"><span class="step-no">02</span><h3>拆解结构与假设</h3><p>从总量下钻到场景和人群，判断变化来自哪里。</p></article>
-          <article class="process-step"><span class="step-no">03</span><h3>形成行动方案</h3><p>把分析结论连接到机制、试点、协作和下一步动作。</p></article>
-          <article class="process-step"><span class="step-no">04</span><h3>复盘并沉淀流程</h3><p>区分个人动作与团队结果，让有效步骤可以复用。</p></article>
-        </div>
-      </section>
-
-      <section id="profile" class="section">
-        <div class="section-heading"><p class="eyebrow">03 / PROFILE</p><h2>背景与训练。</h2></div>
-        <div class="profile-grid">
-          <div><p class="profile-copy">我在郑州大学学习国际经济与贸易，在复旦大学继续学习国际商务。教育和实习经历让我逐渐确认：<em>能力不是简历词，而是能被追问的证据链。</em></p><div class="skills"><span class="skill">经营分析</span><span class="skill">成本 / 履约 / 供需</span><span class="skill">SQL</span><span class="skill">Python</span><span class="skill">Excel</span><span class="skill">Tableau</span><span class="skill">AI 应用</span></div></div>
-          <div class="timeline"><div class="timeline-item"><span class="year">2025 至今</span><div><h3>复旦大学 · 国际商务硕士</h3><p>企业国际化、国际经济、数据方法与 AI 应用相关训练。</p></div></div><div class="timeline-item"><span class="year">2021 - 2025</span><div><h3>郑州大学 · 国际经济与贸易</h3><p>市场调研、项目研究、毕业论文与现实问题分析训练。</p></div></div></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="building"><div><p class="eyebrow">04 / BUILDING IN PUBLIC</p><h2>正在整理，暂不夸大。</h2><p>公开主页本身会继续迭代。等公开项目具备完整说明和可访问链接后，再把它们升级成正式案例。</p></div><div class="building-status"><strong>AI 辅助分析工作流</strong><span>资料整理、研究与输出的可复用流程，正在做公开版脱敏整理。</span></div></div>
-      </section>
-
-      <section id="contact" class="section contact">
-        <div><p class="eyebrow">05 / CONTACT</p><h2>正在寻找商业分析、经营分析与策略运营相关机会。</h2></div>
-        <div><p>邮件请注明公司与岗位。</p><a class="text-link" href="mailto:liuboyang123450@163.com">liuboyang123450@163.com ↗</a><br><a class="text-link" href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-      </section>
-    </main>
-
-    <footer><span>刘柏杨 · 个人能力说明书</span><span>© 2026</span></footer>
-  </div>
+  <section class="hero" id="top" aria-label="首页">
+    <div class="shell nav reveal one"><a class="nav-brand" href="#top">LIU BOYANG</a><nav class="nav-links" aria-label="主导航"><a href="#about">关于我</a><a href="#education">教育</a><a href="#work">在做的事</a><a href="#contact">联系</a></nav></div>
+    <h1 class="hero-wordmark reveal two" aria-label="LIU BOYANG">LIU BOYANG</h1>
+    <div class="character-stage reveal three" aria-hidden="true"><div class="character" id="character"><img src="hero-character.png" width="1024" height="1536" alt=""><i class="pupil left"></i><i class="pupil right"></i></div></div>
+    <div class="shell hero-bottom reveal three"><p class="hero-intro"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士。关注商业分析、策略运营与 AI 工作流。</p><a class="button" href="#contact">联系我 ↗</a></div>
+    <span class="scroll-note">SCROLL TO KNOW MORE</span>
+  </section>
+  <main>
+    <section class="section" id="about"><div class="shell about-grid"><figure class="formal-photo"><img src="avatar.png" width="716" height="895" alt="刘柏杨的正式照片"></figure><div class="about-copy"><p class="eyebrow">ABOUT ME</p><p>我喜欢把复杂的事情先<em>想清楚</em>，再把它<em>踏踏实实地往前推</em>。</p><p>对我来说，好的业务工作不只是给出一个结论，而是把问题接住、把口径说清、把下一步推进下去。我更像一个可靠的中台型伙伴：有判断，也能落地。</p></div></div><div class="shell principles"><article class="principle"><span class="principle-no">01</span><h3>有想法</h3><p>先理解业务真正卡在哪里，再决定该看什么、怎么拆、往哪走。</p></article><article class="principle"><span class="principle-no">02</span><h3>靠得住</h3><p>不把阶段判断写成结果，不把猜测当事实，让每个结论经得起追问。</p></article><article class="principle"><span class="principle-no">03</span><h3>能及时推进</h3><p>在信息并不完整时先建立可用路径，把协作和行动尽快带起来。</p></article></div></section>
+    <section class="section" id="education"><div class="shell"><p class="eyebrow">EDUCATION</p><h2>从郑州到上海，<br>一直在学着理解真实的商业世界。</h2><div class="education-list"><article class="education-item"><span class="year">2025 至今</span><h3>复旦大学 · 国际商务硕士</h3><p>企业国际化、国际经济、数据方法与 AI 应用。</p></article><article class="education-item"><span class="year">2021 - 2025</span><h3>郑州大学 · 国际经济与贸易</h3><p>市场调研、项目研究与现实问题分析训练。</p></article></div></div></section>
+    <section class="section" id="work"><div class="shell"><p class="eyebrow">WHAT I WORK ON</p><h2>不是罗列项目，<br>是我愿意反复琢磨的问题。</h2><div class="work-list"><article class="work-item"><span class="work-index">01</span><div><h3>在成本、履约和供给之间找到可行动的单元</h3><p>做过即时配送相关分析，从总量问题下钻到城市、模式和切换点位，帮助讨论更接近业务现场。</p></div><span class="work-tag">经营分析 · 策略测算</span></article><article class="work-item"><span class="work-index">02</span><div><h3>让线上交易真正接住线下服务</h3><p>围绕汽车后市场的交易与履约闭环，参与研究、模式拆解、数字券和线下核销机制设计。</p></div><span class="work-tag">行业研究 · 模式设计</span></article><article class="work-item"><span class="work-index">03</span><div><h3>把一次次临场分析，变成可以复用的工作流</h3><p>持续探索如何把 AI 放进资料整理、口径检查和结果表达，同时保留人的判断与复核。</p></div><span class="work-tag">AI Workflow · 质量控制</span></article></div></div></section>
+    <section class="section" id="contact"><div class="shell contact"><div><p class="eyebrow">LET'S TALK</p><h2>如果你在找一个能把事情接住、想明白并及时推进的人，欢迎联系我。</h2></div><div class="contact-links"><a href="mailto:liuboyang123450@163.com">liuboyang123450@163.com</a><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></section>
+  </main>
+  <footer class="shell"><span>LIU BOYANG · PERSONAL HOMEPAGE</span><span>© 2026</span></footer>
+  <script>
+    document.documentElement.classList.add('js');
+    const motionOK=window.matchMedia('(hover: hover) and (pointer: fine)').matches&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hero=document.querySelector('.hero'); const character=document.getElementById('character'); const pupils=document.querySelectorAll('.pupil');
+    if(motionOK&&hero&&character){hero.addEventListener('pointermove',(event)=>{const rect=hero.getBoundingClientRect();const x=(event.clientX-rect.left)/rect.width-.5;const y=(event.clientY-rect.top)/rect.height-.5;character.style.setProperty('--move-x',`${x*16}px`);character.style.setProperty('--move-y',`${y*8}px`);character.style.setProperty('--tilt',`${x*4}deg`);pupils.forEach((pupil)=>{pupil.style.setProperty('--pupil-x',`${x*8}px`);pupil.style.setProperty('--pupil-y',`${y*5}px`);});});hero.addEventListener('pointerleave',()=>{character.style.setProperty('--move-x','0px');character.style.setProperty('--move-y','0px');character.style.setProperty('--tilt','0deg');pupils.forEach((pupil)=>{pupil.style.setProperty('--pupil-x','0px');pupil.style.setProperty('--pupil-y','0px');});});}
+  </script>
 </body>
 </html>
