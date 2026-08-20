@@ -172,7 +172,7 @@ Expected: `9`
 
 Run: `rg -o 'data-target="[0-8]"' portfolio/index.html | Measure-Object | Select-Object -ExpandProperty Count`
 
-Expected: `18`
+Expected: `14` (five top-navigation links and nine page-indicator links).
 
 ### Task 6: Validate, review and publish
 
@@ -209,4 +209,3 @@ git -C portfolio add index.html cases/README.md assets/education
 git -C portfolio commit -m "feat: add first long-term homepage content structure"
 git -C portfolio -c http.sslBackend=openssl push origin main
 ```
-

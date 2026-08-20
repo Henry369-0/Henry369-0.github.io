@@ -60,8 +60,10 @@
     .hero-character { position: relative; width: auto; height: 100%; aspect-ratio: 2 / 3; margin: 0 auto; }
     .hero-character::after { position: absolute; z-index: -1; right: 10%; bottom: 1%; left: 10%; height: 22%; border-radius: 50%; background: rgba(0, 0, 0, .65); content: ""; filter: blur(30px); }
     .hero-character img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); }
-    .hero-intro { position: absolute; z-index: 4; bottom: clamp(54px, 7vw, 92px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); width: min(310px, 33vw); margin: 0; color: #d7d8d5; font-size: clamp(.78rem, 1.2vw, 1rem); letter-spacing: .025em; }
+    .hero-intro { position: absolute; z-index: 4; bottom: clamp(116px, 10vw, 142px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); width: min(310px, 33vw); margin: 0; color: #d7d8d5; font-size: clamp(.78rem, 1.2vw, 1rem); letter-spacing: .025em; }
     .hero-intro strong { color: var(--cream); font-weight: 850; }
+    .hero-tags { position: absolute; z-index: 4; bottom: clamp(50px, 6vw, 78px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); display: flex; flex-wrap: wrap; gap: 8px; width: min(360px, 34vw); }
+    .hero-tags span { padding: 5px 9px; border: 1px solid rgba(232, 218, 197, .27); border-radius: 999px; color: #bfc0bb; font-size: .64rem; letter-spacing: .04em; }
     .hero-cta { position: absolute; z-index: 4; right: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); bottom: clamp(56px, 7vw, 94px); display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 27px; border: 1px solid rgba(232, 218, 197, .8); border-radius: 999px; color: var(--cream); box-shadow: 0 0 0 4px rgba(232, 218, 197, .06), inset 0 0 18px rgba(232, 218, 197, .06); font-size: .78rem; font-weight: 850; letter-spacing: .08em; transition: background .2s ease, color .2s ease, transform .2s ease; }
     .hero-cta:hover { background: var(--cream); color: var(--black); transform: translateY(-2px); }
     .scroll-note { position: absolute; z-index: 4; bottom: 18px; left: 50%; color: var(--muted); font-size: .64rem; letter-spacing: .18em; transform: translateX(-50%); }
@@ -73,15 +75,37 @@
     .education-year { color: var(--cream-dark); font-family: Georgia, serif; font-size: 1.08rem; }
     .education-item h3 { margin: 0; font-size: clamp(1.35rem, 2.25vw, 2.25rem); letter-spacing: -.045em; }
     .education-item p { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
+    .focus { background: radial-gradient(circle at 78% 34%, rgba(112, 103, 89, .14), transparent 27%), #0e0e0d; }
+    .focus .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(44px, 8vw, 128px); align-items: center; }
+    .focus-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .focus-item { min-height: 122px; padding: 22px 25px; background: #10100f; }
+    .focus-item span { color: var(--cream-dark); font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
+    .focus-item h3 { margin: 8px 0 6px; font-size: 1.25rem; letter-spacing: -.04em; }
+    .focus-item p { margin: 0; color: var(--muted); font-size: .86rem; }
+    .school-mark { display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid rgba(232, 218, 197, .42); border-radius: 50%; color: var(--cream); font-family: Georgia, serif; font-size: .85rem; letter-spacing: .05em; }
+    .training { background: linear-gradient(120deg, #0b0b0b, #151413); }
+    .training .panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(46px, 9vw, 140px); align-items: center; }
+    .training-list { display: grid; gap: 17px; }
+    .training-item { padding: 0 0 17px; border-bottom: 1px solid var(--line); }
+    .training-item h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.035em; }
+    .training-item p { margin: 6px 0 0; color: var(--muted); font-size: .88rem; }
 
     .experience { background: #0d0d0d; }
     .experience .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 9vw, 130px); align-items: center; }
-    .experience-list { display: grid; gap: 14px; }
+    .experience-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
     .experience-card { position: relative; padding: 23px 24px; border: 1px solid var(--line); background: rgba(255,255,255,.025); transition: border-color .25s ease, transform .25s ease; }
     .experience-card:hover { border-color: rgba(232, 218, 197, .52); transform: translateX(7px); }
     .experience-card span { color: var(--cream-dark); font-size: .7rem; font-weight: 850; letter-spacing: .13em; }
     .experience-card h3 { margin: 9px 0 7px; font-size: 1.25rem; letter-spacing: -.04em; }
     .experience-card p { margin: 0; color: var(--muted); font-size: .87rem; }
+    .experience-card time { display: block; margin-top: 8px; color: #747571; font-size: .69rem; letter-spacing: .06em; }
+    .cases { background: radial-gradient(circle at 22% 73%, rgba(90, 103, 116, .12), transparent 28%), #0c0c0c; }
+    .cases .panel-inner { display: grid; grid-template-columns: 1fr 1.02fr; gap: clamp(40px, 8vw, 126px); align-items: center; }
+    .case-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .case-card { min-height: 248px; padding: 21px; border: 1px solid var(--line); background: rgba(255,255,255,.025); }
+    .case-card span { color: var(--cream-dark); font-size: .67rem; font-weight: 850; letter-spacing: .11em; }
+    .case-card h3 { margin: 10px 0 10px; font-size: 1.15rem; letter-spacing: -.04em; line-height: 1.2; }
+    .case-card p { margin: 0; color: var(--muted); font-size: .84rem; }
 
     .method { background: radial-gradient(circle at 74% 48%, rgba(104, 93, 74, .14), transparent 31%), #11100f; }
     .method .panel-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(44px, 9vw, 132px); align-items: center; }
@@ -90,6 +114,18 @@
     .method-item span { color: var(--cream-dark); font-family: Georgia, serif; font-size: 1.05rem; }
     .method-item h3 { margin: 0; font-size: 1.15rem; letter-spacing: -.035em; }
     .method-item p { margin: 5px 0 0; color: var(--muted); font-size: .86rem; }
+    .ai-workbench { background: linear-gradient(135deg, #111 0%, #0c0c0c 54%, #16130f 100%); }
+    .ai-workbench .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(44px, 9vw, 128px); align-items: center; }
+    .workbench-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .workbench-item { padding: 22px 24px; background: #10100f; }
+    .workbench-item h3 { margin: 0; font-size: 1.15rem; letter-spacing: -.03em; }
+    .workbench-item p { margin: 6px 0 0; color: var(--muted); font-size: .87rem; }
+    .now { background: linear-gradient(145deg, #15120f, #0b0b0b 56%); }
+    .now .panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(45px, 9vw, 135px); align-items: center; }
+    .now.contact .panel-inner { display: grid; flex-direction: initial; }
+    .now h2 { font-size: clamp(2.3rem, 4.4vw, 4.8rem); }
+    .now-list { margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .now-list li { padding: 15px 0; border-bottom: 1px solid var(--line); color: #d5d5d1; font-size: .92rem; }
 
     .contact { background: linear-gradient(145deg, #15120f, #0b0b0b 56%); }
     .contact .panel-inner { display: flex; flex-direction: column; justify-content: center; }
@@ -120,9 +156,13 @@
       .hero-intro { bottom: 42px; left: 19px; width: 210px; font-size: .73rem; }
       .hero-cta { right: 19px; bottom: 43px; min-height: 45px; padding: 0 17px; font-size: .66rem; }
       .scroll-note { display: none; }
-      .education .panel-inner, .experience .panel-inner, .method .panel-inner { grid-template-columns: 1fr; gap: 35px; }
+      .hero-tags { bottom: 30px; left: 19px; width: 230px; transform: translateY(-72px); }
+      .education .panel-inner, .focus .panel-inner, .training .panel-inner, .experience .panel-inner, .cases .panel-inner, .method .panel-inner, .ai-workbench .panel-inner, .now .panel-inner { grid-template-columns: 1fr; gap: 35px; }
       .education-item { grid-template-columns: 76px 1fr; padding: 22px 0; }
+      .experience-list { grid-template-columns: 1fr; }
       .experience-card { padding: 18px; }
+      .case-list { grid-template-columns: 1fr; gap: 9px; }
+      .case-card { min-height: 0; }
       .contact-footer .panel-inner { width: min(100% - 38px, 620px); }
     }
     @media (max-width: 450px) {
@@ -130,6 +170,7 @@
       .hero-name { top: 24vh; font-size: 13.6vw; }
       .hero-character-stage { width: 108vw; height: 65svh; }
       .hero-intro { display: none; }
+      .hero-tags { display: none; }
       .hero-cta { bottom: 26px; }
       h2 { font-size: 2.45rem; }
     }
@@ -145,20 +186,24 @@
       <a class="brand" href="#home">LIU BOYANG</a>
       <nav class="nav-links" aria-label="主页导航">
         <a href="#home" data-target="0" aria-current="true">首页</a>
-        <a href="#education" data-target="1">教育</a>
-        <a href="#experience" data-target="2">经历</a>
-        <a href="#method" data-target="3">方式</a>
-        <a href="#contact" data-target="4">联系</a>
+        <a href="#experience" data-target="4">经历</a>
+        <a href="#method" data-target="6">方式</a>
+        <a href="#ai-workbench" data-target="7">AI 工作台</a>
+        <a href="#contact" data-target="8">联系</a>
       </nav>
     </div>
   </header>
 
   <aside class="page-indicator" aria-label="页面进度">
     <a href="#home" data-target="0" aria-current="true" aria-label="第 1 页：首页"></a>
-    <a href="#education" data-target="1" aria-label="第 2 页：教育"></a>
-    <a href="#experience" data-target="2" aria-label="第 3 页：经历"></a>
-    <a href="#method" data-target="3" aria-label="第 4 页：工作方式"></a>
-    <a href="#contact" data-target="4" aria-label="第 5 页：联系"></a>
+    <a href="#focus" data-target="1" aria-label="第 2 页：关心的问题"></a>
+    <a href="#education" data-target="2" aria-label="第 3 页：成长路径"></a>
+    <a href="#training" data-target="3" aria-label="第 4 页：训练沉淀"></a>
+    <a href="#experience" data-target="4" aria-label="第 5 页：业务现场"></a>
+    <a href="#cases" data-target="5" aria-label="第 6 页：代表案例"></a>
+    <a href="#method" data-target="6" aria-label="第 7 页：工作方式"></a>
+    <a href="#ai-workbench" data-target="7" aria-label="第 8 页：AI 工作台"></a>
+    <a href="#contact" data-target="8" aria-label="第 9 页：正在构建与联系"></a>
   </aside>
 
   <main>
@@ -167,45 +212,91 @@
       <div class="hero-character-stage reveal delay-2" aria-hidden="true">
         <div class="hero-character"><img src="hero-character-optimized.webp" width="800" height="1200" decoding="async" fetchpriority="high" alt=""></div>
       </div>
-      <p class="hero-intro reveal delay-2"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士，关注商业分析、策略运营与 AI 工作流。<br>有想法，也把事情接住，及时往前推。</p>
+      <p class="hero-intro reveal delay-2"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士。现在想把商业问题看得更清楚一点，也把事情做得更扎实一点。<br>有想法，也愿意把事情接住，及时往前推。</p>
+      <div class="hero-tags reveal delay-2" aria-label="关注方向"><span>业务分析</span><span>策略运营</span><span>数据表达</span><span>AI 工作流</span></div>
       <a class="hero-cta reveal delay-2" href="#contact">联系我 ↗</a>
-      <span class="scroll-note">SCROLL TO EXPLORE</span>
     </section>
 
-    <section class="panel education" id="education" data-panel="1">
+    <section class="panel focus" id="focus" data-panel="1">
       <div class="panel-inner">
-        <div><p class="eyebrow">EDUCATION</p><h2>从郑州到上海，<br>一直在学着理解真实的商业世界。</h2><p class="panel-copy">教育对我而言不只是学历，而是一套看问题、找证据、把判断落到现实里的训练。</p></div>
+        <div><p class="eyebrow">WHAT I CARE ABOUT</p><h2>我更在意，<br>一个问题到底卡在哪里。</h2><p class="panel-copy">很多事情表面是指标、流程或资源不够，往下看才会发现是口径、供给、协同方式或执行节奏出了问题。</p></div>
+        <div class="focus-list">
+          <article class="focus-item"><span>01</span><h3>经营到底有没有在发生</h3><p>把总量变化拆到具体场景，找出真正影响结果的环节。</p></article>
+          <article class="focus-item"><span>02</span><h3>模糊的问题怎么往前走</h3><p>把讨论变成能核对、能选择、也能执行的下一步。</p></article>
+          <article class="focus-item"><span>03</span><h3>重复劳动能不能少一点</h3><p>把资料、检查和表达整理成能复用的工作方式。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel education" id="education" data-panel="2">
+      <div class="panel-inner">
+        <div><p class="eyebrow">GROWTH PATH</p><h2>从郑州到上海，<br>我一直在学着看见真实的问题。</h2><p class="panel-copy">学校给我的不只是两段学历。郑大的项目和研究让我开始重视证据，复旦把我带进更大的商业语境，也让我更愿意把课堂外的事想明白。</p></div>
         <div class="education-list">
-          <article class="education-item"><span class="education-year">2025 至今</span><div><h3>复旦大学 · 国际商务硕士</h3><p>企业国际化、国际经济、数据方法与 AI 应用。</p></div></article>
-          <article class="education-item"><span class="education-year">2021 - 2025</span><div><h3>郑州大学 · 国际经济与贸易</h3><p>市场调研、项目研究与现实问题分析训练。</p></div></article>
+          <article class="education-item"><span class="school-mark">FDU</span><div><h3>复旦大学 · 国际商务硕士</h3><p>2025 至今。在国际商务、数据方法和现实业务之间来回切换，继续寻找适合自己的问题。</p></div></article>
+          <article class="education-item"><span class="school-mark">ZZU</span><div><h3>郑州大学 · 国际经济与贸易</h3><p>2021 - 2025。从市场调研、企业调查到毕业研究，慢慢学会把问题、数据和判断对应起来。</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="panel experience" id="experience" data-panel="2">
+    <section class="panel training" id="training" data-panel="3">
       <div class="panel-inner">
-        <div><p class="eyebrow">EXPERIENCE</p><h2>不是项目清单，<br>是我真正参与过的业务现场。</h2><p class="panel-copy">这里先放经历框架。后续每一张卡都可以继续补上过程、判断与公开版证据。</p></div>
-        <div class="experience-list">
-          <article class="experience-card"><span>即时配送 · 经营分析</span><h3>在成本、履约和供给之间找到可行动的单元</h3><p>从总量问题下钻到城市、模式和切换点位，让讨论更接近业务现场。</p></article>
-          <article class="experience-card"><span>电商经营 · 模式设计</span><h3>让线上交易真正接住线下服务</h3><p>围绕汽车后市场的交易与履约闭环，参与研究、模式拆解和核销机制设计。</p></article>
-          <article class="experience-card"><span>AI 应用 · 工作流</span><h3>把一次次临场分析，变成可以复用的流程</h3><p>持续探索 AI 在资料整理、口径检查和结果表达里的正确位置。</p></article>
+        <div><p class="eyebrow">TRAINING</p><h2>把材料做实，<br>再把判断说清楚。</h2><p class="panel-copy">我不太相信一上来就能有漂亮结论。先把资料看全、把口径对齐，结论才有可能站得住。</p></div>
+        <div class="training-list">
+          <article class="training-item"><h3>先把研究对象弄明白</h3><p>做过问卷、企业调查和毕业研究，也因此知道数据不会自己回答问题。</p></article>
+          <article class="training-item"><h3>把零散材料整理成结构</h3><p>表格、访谈、论文和业务资料放在一起看，才知道哪些能信，哪些还要再核对。</p></article>
+          <article class="training-item"><h3>让结论回到人和场景里</h3><p>分析不是为了把图表做得好看，而是为了让下一步讨论更具体。</p></article>
         </div>
       </div>
     </section>
 
-    <section class="panel method" id="method" data-panel="3">
+    <section class="panel experience" id="experience" data-panel="4">
+      <div class="panel-inner">
+        <div><p class="eyebrow">IN THE FIELD</p><h2>四段实习，<br>让我知道业务不是纸面上的词。</h2><p class="panel-copy">公司名字可以公开，细节要有边界。这里留下我参与过的场景，不把内部数据和团队成果硬写成自己的。</p></div>
+        <div class="experience-list">
+          <article class="experience-card"><span>华创证券 · 机械行业研究</span><h3>把资料和数据，整理成能追溯的研究底稿</h3><p>参与公司专题、行业数据整理、业绩交流纪要核验和海外同业研究。</p><time>2025.04 - 2025.08</time></article>
+          <article class="experience-card"><span>得物 · 数据分析</span><h3>在需求波动里看人力与服务之间的平衡</h3><p>参与客服中心的日报、预测和人力调度相关数据支持。</p><time>2025.08 - 2025.10</time></article>
+          <article class="experience-card"><span>字节跳动 TikTok Shop · 策略运营</span><h3>把类目经营观察，接到商家与策略动作上</h3><p>参与海外电商的类目经营观察、商家运营和策略支持。</p><time>2026.01 - 2026.07</time></article>
+          <article class="experience-card"><span>京东秒送 · 商业分析</span><h3>从即时履约的复杂现场里找可分析的问题</h3><p>参与运力结构观察、经营分析和分析流程整理。</p><time>2026.07 - 2026.09</time></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel cases" id="cases" data-panel="5">
+      <div class="panel-inner">
+        <div><p class="eyebrow">SELECTED CASES</p><h2>我更想留下的，<br>是做判断的过程。</h2><p class="panel-copy">案例不追求把话说满。每一篇都会按问题、判断、行动路径和留下的产物来写，等公开边界逐一核对好再展开。</p></div>
+        <div class="case-list">
+          <article class="case-card"><span>RESEARCH</span><h3>公司和行业研究</h3><p>面对一手资料、历史数据和不同口径时，先把底稿做扎实，再讨论判断。</p></article>
+          <article class="case-card"><span>OPERATIONS</span><h3>需求与供给怎么匹配</h3><p>需求在变，人力和服务标准也在互相约束，分析要落到具体的调度选择。</p></article>
+          <article class="case-card"><span>DELIVERY</span><h3>即时履约里的结构问题</h3><p>把看起来临时的异常，重新放回运力、成本和履约之间理解。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel method" id="method" data-panel="6">
       <div class="panel-inner">
         <div><p class="eyebrow">HOW I WORK</p><h2>有想法，靠得住，<br>也能及时把事情往前推。</h2></div>
         <div class="method-list">
-          <article class="method-item"><span>01</span><div><h3>先把问题想清楚</h3><p>确认业务目标、口径、边界与真正需要被解决的矛盾。</p></div></article>
-          <article class="method-item"><span>02</span><div><h3>再把判断做扎实</h3><p>区分事实、推测和阶段结论，让每个说法经得起追问。</p></div></article>
-          <article class="method-item"><span>03</span><div><h3>最后让行动发生</h3><p>在信息不完整时建立可用路径，把协作与下一步尽快带起来。</p></div></article>
+          <article class="method-item"><span>01</span><div><h3>先把问题说清楚</h3><p>先确认目标、口径和边界，别急着给答案。</p></div></article>
+          <article class="method-item"><span>02</span><div><h3>把能确定的和不能确定的分开</h3><p>有材料支撑的就说清楚，还没证实的就继续找。</p></div></article>
+          <article class="method-item"><span>03</span><div><h3>不等万事俱备才行动</h3><p>信息不完整时，也先把能推进的下一步接住。</p></div></article>
+          <article class="method-item"><span>04</span><div><h3>让下一次少走一点弯路</h3><p>把做过的事整理下来，给以后的人和自己留个入口。</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="panel contact" id="contact" data-panel="4">
-      <div class="panel-inner"><p class="eyebrow">LET'S TALK</p><h2>如果你在找一个能把事情接住、想明白并及时推进的人，欢迎联系我。</h2><div class="contact-links"><a href="mailto:liuboyang123450@163.com">liuboyang123450@163.com</a><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+    <section class="panel ai-workbench" id="ai-workbench" data-panel="7">
+      <div class="panel-inner">
+        <div><p class="eyebrow">AI WORKBENCH</p><h2>AI 对我来说，<br>是把事情做顺手的工具。</h2><p class="panel-copy">我会用它帮我读材料、查证据、整理表达。但它给出的答案不能直接当结论，还是要回到原始信息里。</p></div>
+        <div class="workbench-list">
+          <article class="workbench-item"><h3>读材料</h3><p>先帮我搭起资料地图，知道哪些文档值得看，哪些问题还没被回答。</p></article>
+          <article class="workbench-item"><h3>查证据</h3><p>把说法、来源和边界放在一起，避免把计划、团队结果和个人工作混成一句话。</p></article>
+          <article class="workbench-item"><h3>做成可复用的东西</h3><p>把临时整理变成文档、案例库、小工具或这个持续更新的个人主页。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel now contact" id="contact" data-panel="8">
+      <div class="panel-inner"><div><p class="eyebrow">NOW</p><h2>这个主页会慢慢长，<br>但不会为了更新而更新。</h2><p class="panel-copy">接下来我会把可公开的案例、AI 工作流和学习记录逐步放进来。每一页都要经得起追问。</p><ul class="now-list"><li>整理 3 个可公开的代表案例</li><li>继续完善个人的 AI 工作流程</li><li>把 GitHub 上的作品做得更清楚一点</li></ul></div><div><p class="eyebrow">LET'S TALK</p><h2>如果你在找一个愿意把问题想清楚、也能把事情往前推的人，欢迎联系我。</h2><div class="contact-links"><a href="mailto:liuboyang123450@163.com">liuboyang123450@163.com</a><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div>
       <footer class="contact-footer"><div class="panel-inner"><span>LIU BOYANG · PERSONAL HOMEPAGE</span><span>© 2026</span></div></footer>
     </section>
   </main>
