@@ -3,345 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="刘柏杨的个人主页。复旦大学国际商务硕士，关注商业分析、策略运营与 AI 工作流。">
+  <meta name="description" content="刘柏杨的个人主页：复旦大学国际商务硕士，关注商业分析、策略运营与 AI 工作流。">
   <meta property="og:title" content="LIU BOYANG｜刘柏杨">
-  <meta property="og:description" content="有想法，靠得住，能及时把事情往前推。">
+  <meta property="og:description" content="把问题说清楚，把判断做扎实。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="hero-character.png">
-  <meta name="theme-color" content="#0b0b0b">
+  <meta property="og:image" content="hero-character-optimized.webp">
+  <meta name="theme-color" content="#e9e5dc">
   <title>LIU BOYANG｜刘柏杨</title>
   <style>
-    :root {
-      --black: #0b0b0b;
-      --black-soft: #121212;
-      --ink: #e8e8e6;
-      --muted: #969794;
-      --line: rgba(232, 232, 230, .16);
-      --silver-a: #5c636c;
-      --silver-b: #d8e0e6;
-      --cream: #e8dac5;
-      --cream-dark: #c8b08c;
-      --max: 1380px;
-    }
-
-    * { box-sizing: border-box; }
-    html { height: 100%; scroll-behavior: smooth; background: var(--black); scroll-snap-type: y mandatory; }
-    body { min-height: 100%; margin: 0; overflow-x: hidden; background: var(--black); color: var(--ink); font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font: inherit; }
-    :focus-visible { outline: 2px solid var(--cream); outline-offset: 5px; }
-
-    .shell { width: min(var(--max), calc(100% - 88px)); margin: 0 auto; }
-    .site-nav { position: fixed; z-index: 20; top: 0; right: 0; left: 0; pointer-events: none; }
-    .site-nav .shell { display: flex; align-items: center; justify-content: space-between; min-height: 80px; border-bottom: 1px solid var(--line); pointer-events: auto; }
-    .brand { color: var(--cream); font-size: .82rem; font-weight: 900; letter-spacing: .22em; }
-    .nav-links { display: flex; gap: clamp(18px, 3.4vw, 52px); color: #d8d9d7; font-size: .78rem; font-weight: 800; letter-spacing: .08em; }
-    .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover, .nav-links a[aria-current="true"] { color: var(--cream); }
-
-    .page-indicator { position: fixed; z-index: 20; right: clamp(20px, 3vw, 48px); top: 50%; display: grid; gap: 11px; transform: translateY(-50%); }
-    .page-indicator a { position: relative; display: block; width: 9px; height: 9px; border: 1px solid rgba(232, 218, 197, .7); border-radius: 50%; transition: background .2s ease, transform .2s ease; }
-    .page-indicator a[aria-current="true"] { background: var(--cream); transform: scale(1.25); }
-
-    .panel { position: relative; display: flex; min-height: 100svh; padding: 112px 0 58px; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
-    .panel::before { position: absolute; inset: 0; z-index: -2; content: ""; }
-    .panel-inner { width: min(var(--max), calc(100% - 88px)); margin: auto; }
-    .eyebrow { margin: 0 0 16px; color: var(--cream-dark); font-size: .72rem; font-weight: 850; letter-spacing: .16em; }
-    h2 { max-width: 970px; margin: 0; font-size: clamp(2.5rem, 5.8vw, 6.6rem); font-weight: 850; letter-spacing: -.07em; line-height: .96; }
-    .panel-copy { max-width: 580px; margin: 26px 0 0; color: var(--muted); font-size: 1rem; }
-
-    .hero { isolation: isolate; padding-top: 0; background: radial-gradient(circle at 50% 56%, rgba(69, 80, 92, .18), transparent 31%), var(--black); }
-    .hero::after { position: absolute; z-index: -1; right: -12vw; bottom: -18vw; width: 58vw; height: 58vw; border-radius: 50%; background: radial-gradient(circle, rgba(75, 91, 110, .15), transparent 64%); content: ""; }
-    .hero-name { position: absolute; z-index: 0; top: clamp(118px, 16vh, 180px); left: 50%; display: inline-flex; align-items: baseline; justify-content: center; gap: .17em; width: 100%; margin: 0; transform: translateX(-50%); color: transparent; background: linear-gradient(180deg, var(--silver-a), var(--silver-b) 59%, #88929c); -webkit-background-clip: text; background-clip: text; font-family: "Arial Black", Impact, "PingFang SC", sans-serif; font-size: clamp(3.9rem, 10.3vw, 11rem); font-weight: 900; letter-spacing: -.045em; line-height: .82; white-space: nowrap; user-select: none; }
-    .hero-name span { display: inline-block; }
-    .hero-character-stage { position: absolute; z-index: 2; bottom: 0; left: 50%; width: min(42vw, 590px); height: min(74svh, 760px); transform: translateX(-50%); }
-    .hero-character-stage::before { position: absolute; z-index: -1; inset: 5% -30% -6%; background: radial-gradient(circle at 50% 50%, rgba(198, 216, 233, .2), transparent 46%); content: ""; filter: blur(18px); }
-    .hero-character { position: relative; width: auto; height: 100%; aspect-ratio: 2 / 3; margin: 0 auto; }
-    .hero-character::after { position: absolute; z-index: -1; right: 10%; bottom: 1%; left: 10%; height: 22%; border-radius: 50%; background: rgba(0, 0, 0, .65); content: ""; filter: blur(30px); }
-    .hero-character img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen; -webkit-mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); mask-image: radial-gradient(ellipse 59% 72% at 50% 48%, #000 61%, transparent 90%); }
-    .hero-intro { position: absolute; z-index: 4; bottom: clamp(116px, 10vw, 142px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); width: min(310px, 33vw); margin: 0; color: #d7d8d5; font-size: clamp(.78rem, 1.2vw, 1rem); letter-spacing: .025em; }
-    .hero-intro strong { color: var(--cream); font-weight: 850; }
-    .hero-tags { position: absolute; z-index: 4; bottom: clamp(50px, 6vw, 78px); left: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); display: flex; flex-wrap: wrap; gap: 8px; width: min(360px, 34vw); }
-    .hero-tags span { padding: 5px 9px; border: 1px solid rgba(232, 218, 197, .27); border-radius: 999px; color: #bfc0bb; font-size: .64rem; letter-spacing: .04em; }
-    .hero-cta { position: absolute; z-index: 4; right: max(44px, calc((100vw - min(var(--max), calc(100vw - 88px))) / 2)); bottom: clamp(56px, 7vw, 94px); display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 27px; border: 1px solid rgba(232, 218, 197, .8); border-radius: 999px; color: var(--cream); box-shadow: 0 0 0 4px rgba(232, 218, 197, .06), inset 0 0 18px rgba(232, 218, 197, .06); font-size: .78rem; font-weight: 850; letter-spacing: .08em; transition: background .2s ease, color .2s ease, transform .2s ease; }
-    .hero-cta:hover { background: var(--cream); color: var(--black); transform: translateY(-2px); }
-    .scroll-note { position: absolute; z-index: 4; bottom: 18px; left: 50%; color: var(--muted); font-size: .64rem; letter-spacing: .18em; transform: translateX(-50%); }
-
-    .education { background: linear-gradient(120deg, #111 0%, #0b0b0b 62%, #171513 100%); }
-    .education .panel-inner { display: grid; grid-template-columns: minmax(320px, 1.05fr) minmax(320px, .95fr); gap: clamp(46px, 10vw, 150px); align-items: center; }
-    .education-list { border-top: 1px solid var(--line); }
-    .education-item { display: grid; grid-template-columns: 100px 1fr; gap: 18px; padding: 30px 0; border-bottom: 1px solid var(--line); }
-    .education-year { color: var(--cream-dark); font-family: Georgia, serif; font-size: 1.08rem; }
-    .education-item h3 { margin: 0; font-size: clamp(1.35rem, 2.25vw, 2.25rem); letter-spacing: -.045em; }
-    .education-item p { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
-    .focus { background: radial-gradient(circle at 78% 34%, rgba(112, 103, 89, .14), transparent 27%), #0e0e0d; }
-    .focus .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(44px, 8vw, 128px); align-items: center; }
-    .focus-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
-    .focus-item { min-height: 122px; padding: 22px 25px; background: #10100f; }
-    .focus-item span { color: var(--cream-dark); font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
-    .focus-item h3 { margin: 8px 0 6px; font-size: 1.25rem; letter-spacing: -.04em; }
-    .focus-item p { margin: 0; color: var(--muted); font-size: .86rem; }
-    .school-mark { display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid rgba(232, 218, 197, .42); border-radius: 50%; color: var(--cream); font-family: Georgia, serif; font-size: .85rem; letter-spacing: .05em; }
-    .training { background: linear-gradient(120deg, #0b0b0b, #151413); }
-    .training .panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(46px, 9vw, 140px); align-items: center; }
-    .training-list { display: grid; gap: 17px; }
-    .training-item { padding: 0 0 17px; border-bottom: 1px solid var(--line); }
-    .training-item h3 { margin: 0; font-size: 1.2rem; letter-spacing: -.035em; }
-    .training-item p { margin: 6px 0 0; color: var(--muted); font-size: .88rem; }
-
-    .experience { background: #0d0d0d; }
-    .experience .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 9vw, 130px); align-items: center; }
-    .experience-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .experience-card { position: relative; padding: 23px 24px; border: 1px solid var(--line); background: rgba(255,255,255,.025); transition: border-color .25s ease, transform .25s ease; }
-    .experience-card:hover { border-color: rgba(232, 218, 197, .52); transform: translateX(7px); }
-    .experience-card span { color: var(--cream-dark); font-size: .7rem; font-weight: 850; letter-spacing: .13em; }
-    .experience-card h3 { margin: 9px 0 7px; font-size: 1.25rem; letter-spacing: -.04em; }
-    .experience-card p { margin: 0; color: var(--muted); font-size: .87rem; }
-    .experience-card time { display: block; margin-top: 8px; color: #747571; font-size: .69rem; letter-spacing: .06em; }
-    .cases { background: radial-gradient(circle at 22% 73%, rgba(90, 103, 116, .12), transparent 28%), #0c0c0c; }
-    .cases .panel-inner { display: grid; grid-template-columns: 1fr 1.02fr; gap: clamp(40px, 8vw, 126px); align-items: center; }
-    .case-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-    .case-card { min-height: 248px; padding: 21px; border: 1px solid var(--line); background: rgba(255,255,255,.025); }
-    .case-card span { color: var(--cream-dark); font-size: .67rem; font-weight: 850; letter-spacing: .11em; }
-    .case-card h3 { margin: 10px 0 10px; font-size: 1.15rem; letter-spacing: -.04em; line-height: 1.2; }
-    .case-card p { margin: 0; color: var(--muted); font-size: .84rem; }
-
-    .method { background: radial-gradient(circle at 74% 48%, rgba(104, 93, 74, .14), transparent 31%), #11100f; }
-    .method .panel-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(44px, 9vw, 132px); align-items: center; }
-    .method-list { border-top: 1px solid var(--line); }
-    .method-item { display: grid; grid-template-columns: 68px 1fr; gap: 15px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .method-item span { color: var(--cream-dark); font-family: Georgia, serif; font-size: 1.05rem; }
-    .method-item h3 { margin: 0; font-size: 1.15rem; letter-spacing: -.035em; }
-    .method-item p { margin: 5px 0 0; color: var(--muted); font-size: .86rem; }
-    .ai-workbench { background: linear-gradient(135deg, #111 0%, #0c0c0c 54%, #16130f 100%); }
-    .ai-workbench .panel-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(44px, 9vw, 128px); align-items: center; }
-    .workbench-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
-    .workbench-item { padding: 22px 24px; background: #10100f; }
-    .workbench-item h3 { margin: 0; font-size: 1.15rem; letter-spacing: -.03em; }
-    .workbench-item p { margin: 6px 0 0; color: var(--muted); font-size: .87rem; }
-    .now { background: linear-gradient(145deg, #15120f, #0b0b0b 56%); }
-    .now .panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(45px, 9vw, 135px); align-items: center; }
-    .now.contact .panel-inner { display: grid; flex-direction: initial; }
-    .now h2 { font-size: clamp(2.3rem, 4.4vw, 4.8rem); }
-    .now-list { margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-    .now-list li { padding: 15px 0; border-bottom: 1px solid var(--line); color: #d5d5d1; font-size: .92rem; }
-
-    .contact { background: linear-gradient(145deg, #15120f, #0b0b0b 56%); }
-    .contact .panel-inner { display: flex; flex-direction: column; justify-content: center; }
-    .contact h2 { max-width: 1000px; }
-    .contact-links { display: flex; flex-wrap: wrap; gap: 18px 38px; margin-top: 48px; }
-    .contact-links a { color: var(--cream); font-size: clamp(1.05rem, 1.8vw, 1.55rem); font-weight: 750; text-decoration: underline; text-decoration-color: rgba(232,218,197,.4); text-underline-offset: 8px; }
-    .contact-footer { position: absolute; right: 0; bottom: 30px; left: 0; color: #777874; font-size: .72rem; }
-    .contact-footer .panel-inner { display: flex; flex-direction: row; justify-content: space-between; }
-
-    .js .reveal { opacity: 0; transform: translateY(20px); animation: reveal .68s cubic-bezier(.2,.7,.2,1) forwards; }
-    .js .delay-1 { animation-delay: .1s; }
-    .js .delay-2 { animation-delay: .22s; }
-    .js .hero-name.reveal { transform: translateX(-50%) translateY(18px); animation-name: reveal-name; }
-    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
-    @keyframes reveal-name { to { opacity: 1; transform: translateX(-50%) translateY(0); } }
-
-    @media (max-width: 780px) {
-      html { scroll-snap-type: y proximity; }
-      .shell, .panel-inner { width: min(100% - 38px, 620px); }
-      .site-nav .shell { min-height: 68px; }
-      .brand { display: none; }
-      .site-nav .shell { justify-content: center; }
-      .nav-links { gap: 15px; font-size: .67rem; letter-spacing: .04em; }
-      .page-indicator { display: none; }
-      .panel { min-height: 100svh; padding: 96px 0 42px; }
-      .hero-name { top: 20vh; gap: .13em; font-size: 14vw; }
-      .hero-character-stage { width: 84vw; height: 65svh; }
-      .hero-intro { bottom: 42px; left: 19px; width: 210px; font-size: .73rem; }
-      .hero-cta { right: 19px; bottom: 43px; min-height: 45px; padding: 0 17px; font-size: .66rem; }
-      .scroll-note { display: none; }
-      .hero-tags { bottom: 30px; left: 19px; width: 230px; transform: translateY(-72px); }
-      .education .panel-inner, .focus .panel-inner, .training .panel-inner, .experience .panel-inner, .cases .panel-inner, .method .panel-inner, .ai-workbench .panel-inner, .now .panel-inner { grid-template-columns: 1fr; gap: 35px; }
-      .education-item { grid-template-columns: 76px 1fr; padding: 22px 0; }
-      .experience-list { grid-template-columns: 1fr; }
-      .experience-card { padding: 18px; }
-      .case-list { grid-template-columns: 1fr; gap: 9px; }
-      .case-card { min-height: 0; }
-      .contact-footer .panel-inner { width: min(100% - 38px, 620px); }
-    }
-    @media (max-width: 450px) {
-      .nav-links { gap: 12px; }
-      .hero-name { top: 24vh; font-size: 13.6vw; }
-      .hero-character-stage { width: 108vw; height: 65svh; }
-      .hero-intro { display: none; }
-      .hero-tags { display: none; }
-      .hero-cta { bottom: 26px; }
-      h2 { font-size: 2.45rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; scroll-snap-type: none; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
-    }
+    :root { --paper:#e9e5dc; --light:#f8f6f0; --deep:#d7d1c5; --ink:#23272b; --soft:#60686a; --navy:#273640; --red:#963d36; --line:rgba(35,39,43,.18); --shadow:0 22px 55px rgba(45,42,35,.14); --max:1420px; }
+    * { box-sizing:border-box; } html { min-height:100%; scroll-behavior:smooth; scroll-snap-type:y mandatory; background:var(--paper); } body { min-width:320px; min-height:100%; margin:0; overflow-x:hidden; color:var(--ink); background:var(--paper); font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif; line-height:1.75; } a { color:inherit; text-decoration:none; } button { color:inherit; font:inherit; } img { display:block; max-width:100%; } :focus-visible { outline:2px solid var(--red); outline-offset:4px; }
+    .site-nav { position:fixed; z-index:30; inset:0 0 auto; pointer-events:none; } .site-nav-inner { display:flex; align-items:center; justify-content:space-between; width:min(var(--max),calc(100% - 72px)); min-height:78px; margin:auto; border-bottom:1px solid var(--line); pointer-events:auto; } .brand { font-size:.78rem; font-weight:900; letter-spacing:.18em; } .nav-links { display:flex; gap:clamp(14px,3vw,42px); font-size:.76rem; font-weight:760; letter-spacing:.06em; } .nav-links a { position:relative; padding:7px 0; color:var(--soft); } .nav-links a::after { position:absolute; right:0; bottom:0; left:0; height:2px; background:var(--red); content:""; transform:scaleX(0); transform-origin:left; transition:transform .2s; } .nav-links a:hover,.nav-links a[aria-current="true"] { color:var(--ink); } .nav-links a[aria-current="true"]::after { transform:scaleX(1); }
+    .page-indicator { position:fixed; z-index:25; top:50%; right:clamp(16px,2.5vw,42px); display:grid; gap:11px; transform:translateY(-50%); } .page-indicator a { display:grid; width:20px; height:11px; place-items:center; } .page-indicator i { width:7px; height:7px; border:1px solid rgba(35,39,43,.45); border-radius:50%; } .page-indicator a[aria-current="true"] i { background:var(--red); border-color:var(--red); transform:scale(1.3); }
+    .panel { position:relative; display:flex; min-height:100svh; padding:112px 0 52px; overflow:hidden; background:var(--paper); scroll-snap-align:start; scroll-snap-stop:always; } .panel::before { position:absolute; inset:0; background-image:radial-gradient(rgba(35,39,43,.12) .5px,transparent .6px); background-size:7px 7px; opacity:.12; content:""; pointer-events:none; } .panel-inner { position:relative; z-index:1; width:min(var(--max),calc(100% - 112px)); margin:auto; } .eyebrow { margin:0 0 14px; color:var(--red); font-size:.7rem; font-weight:850; letter-spacing:.16em; } h1,h2,h3,p { overflow-wrap:break-word; } h2 { margin:0; font-size:clamp(2.15rem,4.1vw,4.65rem); font-weight:820; letter-spacing:-.052em; line-height:1.12; } .panel-copy { max-width:620px; margin:20px 0 0; color:var(--soft); font-size:clamp(.92rem,1.1vw,1.03rem); }
+    .paper-hero { background:linear-gradient(105deg,var(--light) 0%,var(--paper) 63%,#d8d2c6 100%); } .hero-layout { display:grid; grid-template-columns:minmax(360px,.92fr) minmax(390px,1.08fr); gap:clamp(35px,7vw,110px); align-items:center; min-height:calc(100svh - 164px); } .hero-index { display:flex; align-items:center; gap:12px; margin-bottom:24px; color:var(--soft); font-family:ui-monospace,Consolas,monospace; font-size:.7rem; letter-spacing:.1em; } .hero-index::before { width:44px; height:1px; background:var(--red); content:""; } .hero-title { max-width:670px; margin:0; font-size:clamp(3rem,6.7vw,7rem); font-weight:880; letter-spacing:-.072em; line-height:1.03; } .hero-title span { display:block; } .hero-title .latin { margin-bottom:.22em; color:var(--navy); font-size:.26em; letter-spacing:.22em; } .hero-lead { max-width:640px; margin:23px 0 0; font-size:clamp(.96rem,1.23vw,1.08rem); } .hero-roles { display:flex; flex-wrap:wrap; gap:7px; margin:21px 0 0; } .hero-roles span { padding:5px 9px; border:1px solid var(--line); color:var(--navy); font-size:.69rem; font-weight:700; letter-spacing:.025em; } .hero-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:15px; } .hero-tags span { color:var(--soft); font-size:.7rem; letter-spacing:.04em; } .portrait-notebook { position:relative; min-height:min(72svh,760px); isolation:isolate; } .portrait-notebook::before { position:absolute; z-index:-2; top:7%; right:0; bottom:6%; left:8%; border:1px solid var(--line); background:#d6d0c5; box-shadow:var(--shadow); content:""; transform:rotate(2.5deg); } .portrait-notebook::after { position:absolute; z-index:-1; top:15%; right:11%; bottom:0; left:0; border:1px solid var(--line); background:repeating-linear-gradient(0deg,rgba(35,39,43,.06) 0 1px,transparent 1px 30px),var(--light); content:""; transform:rotate(-2deg); } .portrait-tape { position:absolute; z-index:2; top:8%; left:7%; width:98px; height:25px; background:rgba(150,61,54,.66); transform:rotate(-8deg); } .hero-portrait { position:absolute; z-index:3; right:2%; bottom:0; left:6%; width:min(100%,590px); height:93%; margin:auto; object-fit:contain; object-position:bottom center; filter:drop-shadow(0 28px 20px rgba(35,39,43,.22)); } .portrait-label { position:absolute; z-index:4; right:0; bottom:9%; max-width:220px; padding:12px 15px; border-left:3px solid var(--red); background:rgba(248,246,240,.94); box-shadow:0 10px 25px rgba(45,42,35,.11); font-size:.76rem; line-height:1.55; } .portrait-label strong { display:block; margin-bottom:3px; letter-spacing:.08em; } .scroll-note { position:absolute; bottom:24px; left:50%; color:var(--soft); font-family:ui-monospace,Consolas,monospace; font-size:.63rem; letter-spacing:.13em; transform:translateX(-50%); }
+    .focus-layout,.training-layout,.method-layout,.ai-layout { display:grid; grid-template-columns:minmax(300px,.85fr) minmax(460px,1.15fr); gap:clamp(45px,8vw,130px); align-items:center; } .focus-rail { position:relative; padding-left:clamp(34px,4.5vw,68px); } .focus-rail::before { position:absolute; top:17px; bottom:17px; left:9px; width:1px; background:var(--navy); content:""; } .focus-item { position:relative; padding:0 0 clamp(25px,4vh,46px); } .focus-item:last-child { padding-bottom:0; } .focus-item::before { position:absolute; top:10px; left:calc(-1 * clamp(34px,4.5vw,68px)); width:19px; height:19px; border:5px solid var(--paper); border-radius:50%; background:var(--red); content:""; } .focus-item:nth-child(2)::before { background:var(--navy); } .focus-item:nth-child(3)::before { background:var(--light); border-color:var(--navy); } .focus-number { display:block; margin-bottom:6px; color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.7rem; letter-spacing:.1em; } .focus-item h3 { margin:0; font-size:clamp(1.35rem,2.1vw,2.35rem); letter-spacing:-.055em; } .focus-item p { max-width:580px; margin:8px 0 0; color:var(--soft); font-size:.95rem; }
+    .education { background:linear-gradient(120deg,#dfe3df,var(--paper) 60%,#d6dbe0); } .education-layout { display:grid; grid-template-columns:minmax(310px,.85fr) minmax(520px,1.15fr); gap:clamp(42px,8vw,125px); align-items:center; } .education-list { position:relative; display:grid; gap:23px; } .education-list::before { position:absolute; top:50%; left:-6%; width:112%; height:1px; background:var(--red); content:""; transform:rotate(-3deg); } .school-card { position:relative; display:grid; grid-template-columns:98px 1fr; gap:22px; padding:clamp(20px,2.7vw,34px); border:1px solid var(--line); background:rgba(248,246,240,.88); box-shadow:var(--shadow); } .school-card:nth-child(2) { margin-left:9%; transform:rotate(1.3deg); } .school-card:nth-child(3) { margin-right:9%; transform:rotate(-1.3deg); } .school-emblem { align-self:start; width:86px; height:86px; object-fit:contain; } .school-card time { color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.68rem; letter-spacing:.08em; } .school-card h3 { margin:5px 0 8px; font-size:clamp(1.26rem,2vw,2rem); letter-spacing:-.055em; } .school-card p { margin:0; color:var(--soft); font-size:.86rem; } .school-notes { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; } .school-notes span { padding:3px 6px; border-bottom:1px solid rgba(150,61,54,.5); color:var(--navy); font-size:.67rem; }
+    .training { background:var(--light); } .visual-window { position:relative; min-height:min(63svh,650px); overflow:hidden; border:1px solid var(--line); background:var(--deep); box-shadow:var(--shadow); } .visual-window img { width:100%; height:100%; object-fit:cover; } .visual-window::after { position:absolute; right:0; bottom:0; left:0; height:44%; background:linear-gradient(transparent,rgba(35,39,43,.52)); content:""; } .image-caption { position:absolute; z-index:1; right:24px; bottom:19px; left:24px; color:#fffdf8; font-size:.73rem; letter-spacing:.04em; } .training-stack { display:grid; border-top:1px solid var(--line); } .training-item { display:grid; grid-template-columns:42px 1fr; gap:18px; padding:23px 0; border-bottom:1px solid var(--line); } .training-item span { color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.73rem; } .training-item h3 { margin:0; font-size:1.25rem; letter-spacing:-.04em; } .training-item p { margin:7px 0 0; color:var(--soft); font-size:.89rem; }
+    .experience { background:linear-gradient(135deg,#e2dfd6,var(--paper) 58%,#d5dce1); } .experience-layout { display:grid; grid-template-columns:minmax(280px,.75fr) minmax(560px,1.25fr); gap:clamp(45px,8vw,125px); align-items:center; } .field-route { position:relative; display:grid; padding-left:49px; } .field-route::before { position:absolute; top:7%; bottom:7%; left:15px; width:1px; background:var(--red); content:""; transform:rotate(2deg); } .field-row { position:relative; display:grid; grid-template-columns:125px 1fr; gap:21px; padding:clamp(17px,2.4vh,28px) 0; border-bottom:1px solid var(--line); } .field-row::before { position:absolute; top:32px; left:-42px; width:16px; height:16px; border:4px solid var(--paper); border-radius:50%; background:var(--navy); content:""; } .field-row:nth-child(2)::before { background:var(--red); } .field-row:nth-child(3)::before { background:#60727b; } .field-row:nth-child(4)::before { background:var(--light); border-color:var(--red); } .field-meta { color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.67rem; line-height:1.65; letter-spacing:.06em; } .field-row h3 { margin:0; font-size:clamp(1.12rem,1.65vw,1.52rem); letter-spacing:-.045em; } .field-row p { margin:4px 0 0; color:var(--soft); font-size:.86rem; }
+    .cases { background:var(--navy); color:var(--light); } .cases::before { background-image:linear-gradient(rgba(248,246,240,.22) .5px,transparent .6px),linear-gradient(90deg,rgba(248,246,240,.22) .5px,transparent .6px); background-size:34px 34px; opacity:.15; } .cases .eyebrow { color:#df8278; } .cases .panel-copy { color:rgba(248,246,240,.7); } .case-layout { display:grid; grid-template-columns:minmax(280px,.7fr) minmax(650px,1.3fr); gap:clamp(42px,7vw,105px); align-items:center; } .case-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:rgba(248,246,240,.3); border:1px solid rgba(248,246,240,.3); } .case-item { position:relative; min-height:146px; padding:20px 20px 18px 65px; background:rgba(39,54,64,.84); } .case-item::before { position:absolute; top:20px; left:19px; color:#df8278; font-family:ui-monospace,Consolas,monospace; font-size:.7rem; content:attr(data-case); } .case-item h3 { margin:0; font-size:1.06rem; line-height:1.3; letter-spacing:-.04em; } .case-item p { margin:7px 0 0; color:rgba(248,246,240,.72); font-size:.79rem; line-height:1.62; }
+    .method { background:#d9d6cf; } .method-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--line); } .method-item { min-height:180px; padding:23px 20px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); } .method-item:nth-child(even) { border-right:0; } .method-item span { color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.68rem; } .method-item h3 { margin:25px 0 7px; font-size:1.15rem; letter-spacing:-.04em; } .method-item p { margin:0; color:var(--soft); font-size:.85rem; }
+    .ai { background:linear-gradient(130deg,#dce2e3,var(--paper) 58%,#e5d9d3); } .ai-layout { display:block; max-width:1120px; } .ai-intro { display:grid; grid-template-columns:minmax(280px,.76fr) minmax(480px,1.24fr); gap:clamp(38px,7vw,100px); align-items:end; } .workflow { position:relative; display:grid; grid-template-columns:repeat(5,1fr); align-items:start; gap:8px; margin-top:27px; } .workflow::before { position:absolute; top:21px; right:8%; left:8%; height:1px; background:var(--red); content:""; } .workflow-node { position:relative; z-index:1; text-align:center; } .workflow-node i { display:grid; width:43px; height:43px; margin:0 auto 12px; border:1px solid var(--navy); border-radius:50%; place-items:center; background:var(--light); color:var(--red); font-style:normal; font-size:.72rem; } .workflow-node strong { display:block; font-size:.82rem; } .workflow-node span { display:block; margin-top:5px; color:var(--soft); font-size:.68rem; line-height:1.45; } .github-projects { display:grid; margin-top:clamp(25px,4vh,45px); border-top:1px solid var(--line); } .github-project { display:grid; grid-template-columns:120px minmax(0,1fr) auto; gap:18px; align-items:baseline; padding:15px 0; border-bottom:1px solid var(--line); } .github-project small { color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.66rem; letter-spacing:.08em; } .github-project h3 { margin:0; font-size:1rem; letter-spacing:-.035em; } .github-project p { margin:4px 0 0; color:var(--soft); font-size:.8rem; line-height:1.55; } .github-project a { padding:3px 0; color:var(--navy); font-size:.77rem; font-weight:800; white-space:nowrap; } .github-project a:hover { color:var(--red); }
+    .contact { background:var(--ink); color:var(--light); } .contact::before { background-image:radial-gradient(rgba(248,246,240,.25) .5px,transparent .6px); opacity:.12; } .contact-layout { display:grid; grid-template-columns:minmax(330px,.88fr) minmax(450px,1.12fr); gap:clamp(45px,9vw,150px); align-items:center; } .contact .eyebrow { color:#df8278; } .contact-card { display:grid; min-height:min(68svh,720px); padding:12px; border:1px solid rgba(248,246,240,.35); place-items:center; background:rgba(248,246,240,.06); } .contact-card > img { width:100%; height:min(64svh,680px); object-fit:contain; } .contact-list { display:grid; margin:0; padding:0; list-style:none; border-top:1px solid rgba(248,246,240,.3); } .contact-list li { display:flex; justify-content:space-between; gap:20px; padding:15px 0; border-bottom:1px solid rgba(248,246,240,.3); } .contact-list span { color:rgba(248,246,240,.55); font-family:ui-monospace,Consolas,monospace; font-size:.68rem; letter-spacing:.08em; } .contact-list a,.contact-list b { font-size:.9rem; font-weight:650; } .contact-list a:hover { color:#df8278; }
+    .detail-drawer { position:fixed; z-index:60; inset:0; display:grid; grid-template-columns:minmax(0,1fr) min(680px,100%); background:rgba(35,39,43,.48); opacity:0; pointer-events:none; transition:opacity .25s; } .detail-drawer[data-open="true"] { opacity:1; pointer-events:auto; } .drawer-backdrop { border:0; background:transparent; cursor:pointer; } .drawer-sheet { position:relative; height:100%; padding:82px clamp(26px,5vw,68px) 35px; overflow-y:auto; background:var(--light); box-shadow:-22px 0 60px rgba(35,39,43,.22); transform:translateX(100%); transition:transform .3s cubic-bezier(.2,.8,.2,1); } .detail-drawer[data-open="true"] .drawer-sheet { transform:translateX(0); } .drawer-close { position:absolute; top:23px; right:24px; display:grid; width:42px; height:42px; border:1px solid var(--line); border-radius:50%; place-items:center; background:var(--light); cursor:pointer; font-size:1.25rem; } .drawer-content { max-width:545px; } .drawer-kicker { margin:0 0 10px; color:var(--red); font-family:ui-monospace,Consolas,monospace; font-size:.68rem; letter-spacing:.12em; } .drawer-content h2 { font-size:clamp(2.2rem,4.5vw,4rem); } .drawer-content h3 { margin:31px 0 7px; font-size:1.2rem; letter-spacing:-.035em; } .drawer-content p { margin:0 0 16px; color:var(--soft); font-size:.95rem; }
+    .js .reveal { opacity:0; transform:translateY(18px); animation:reveal .7s cubic-bezier(.2,.75,.25,1) forwards; } .js .delay-1 { animation-delay:.1s; } .js .delay-2 { animation-delay:.22s; } @keyframes reveal { to { opacity:1; transform:translateY(0); } }
+    @media (max-width:920px) { .site-nav-inner,.panel-inner { width:min(100% - 46px,720px); } .page-indicator { display:none; } .hero-layout,.focus-layout,.education-layout,.training-layout,.experience-layout,.case-layout,.method-layout,.contact-layout,.ai-intro { grid-template-columns:1fr; gap:36px; } .panel { min-height:auto; padding:111px 0 70px; scroll-snap-stop:normal; } .paper-hero { min-height:100svh; } .hero-layout { min-height:auto; } .portrait-notebook { min-height:510px; } .education-list::before { left:-3%; width:106%; } .school-card:nth-child(2),.school-card:nth-child(3) { margin:0; transform:none; } .field-route { padding-left:40px; } .field-row { grid-template-columns:110px 1fr; } .case-list { grid-template-columns:1fr; } .github-project { grid-template-columns:102px minmax(0,1fr) auto; } }
+    @media (max-width:620px) { html { scroll-snap-type:y proximity; } .site-nav-inner { min-height:64px; justify-content:center; } .brand { display:none; } .nav-links { gap:13px; font-size:.65rem; } .panel-inner { width:min(100% - 34px,560px); } .panel { padding:88px 0 48px; } h2 { font-size:clamp(2.5rem,14vw,4.4rem); } .hero-title { font-size:clamp(3.55rem,18vw,6.3rem); } .hero-lead { font-size:.95rem; } .portrait-notebook { min-height:405px; } .portrait-label { right:6px; bottom:4%; max-width:170px; padding:9px 11px; font-size:.66rem; } .school-card { grid-template-columns:72px 1fr; gap:15px; padding:20px; } .school-emblem { width:65px; height:65px; } .visual-window { min-height:360px; } .field-row { grid-template-columns:1fr; gap:8px; } .method-list { grid-template-columns:1fr; } .method-item,.method-item:nth-child(even) { min-height:0; border-right:0; } .workflow { grid-template-columns:1fr; gap:14px; margin-top:25px; } .workflow::before { top:7%; bottom:7%; left:21px; width:1px; height:auto; } .workflow-node { display:grid; grid-template-columns:47px 1fr; column-gap:14px; text-align:left; } .workflow-node i { grid-row:span 2; margin:0; } .workflow-node strong { align-self:end; } .workflow-node span { margin-top:0; } .github-project { grid-template-columns:1fr auto; gap:5px 12px; } .github-project small { grid-column:1/-1; } .github-project p { font-size:.76rem; } .contact-card { min-height:0; padding:10px; } .contact-card > img { height:auto; max-height:none; } .contact-list li { display:grid; gap:3px; } .detail-drawer { grid-template-columns:0 1fr; } .drawer-sheet { padding:76px 25px 30px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; scroll-snap-type:none; } *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
   </style>
 </head>
 <body>
-  <header class="site-nav">
-    <div class="shell">
-      <a class="brand" href="#home">LIU BOYANG</a>
-      <nav class="nav-links" aria-label="主页导航">
-        <a href="#home" data-target="0" aria-current="true">首页</a>
-        <a href="#experience" data-target="4">经历</a>
-        <a href="#method" data-target="6">方式</a>
-        <a href="#ai-workbench" data-target="7">AI 工作台</a>
-        <a href="#contact" data-target="8">联系</a>
-      </nav>
-    </div>
-  </header>
-
-  <aside class="page-indicator" aria-label="页面进度">
-    <a href="#home" data-target="0" aria-current="true" aria-label="第 1 页：首页"></a>
-    <a href="#focus" data-target="1" aria-label="第 2 页：关心的问题"></a>
-    <a href="#education" data-target="2" aria-label="第 3 页：成长路径"></a>
-    <a href="#training" data-target="3" aria-label="第 4 页：训练沉淀"></a>
-    <a href="#experience" data-target="4" aria-label="第 5 页：业务现场"></a>
-    <a href="#cases" data-target="5" aria-label="第 6 页：代表案例"></a>
-    <a href="#method" data-target="6" aria-label="第 7 页：工作方式"></a>
-    <a href="#ai-workbench" data-target="7" aria-label="第 8 页：AI 工作台"></a>
-    <a href="#contact" data-target="8" aria-label="第 9 页：正在构建与联系"></a>
-  </aside>
-
+  <header class="site-nav"><div class="site-nav-inner"><a class="brand" href="#home">LIU BOYANG</a><nav class="nav-links" aria-label="主页导航"><a href="#home" data-target="0" aria-current="true">见面</a><a href="#education" data-target="2">教育</a><a href="#experience" data-target="4">现场</a><a href="#ai" data-target="7">AI 工作台</a><a href="#contact" data-target="8">联系</a></nav></div></header>
+  <aside class="page-indicator" aria-label="页面进度"><a href="#home" data-target="0" aria-current="true"><i></i></a><a href="#focus" data-target="1"><i></i></a><a href="#education" data-target="2"><i></i></a><a href="#training" data-target="3"><i></i></a><a href="#experience" data-target="4"><i></i></a><a href="#cases" data-target="5"><i></i></a><a href="#method" data-target="6"><i></i></a><a href="#ai" data-target="7"><i></i></a><a href="#contact" data-target="8"><i></i></a></aside>
   <main>
-    <section class="panel hero" id="home" data-panel="0" aria-label="首页">
-      <h1 class="hero-name reveal delay-1"><span>LIU</span><span>BOYANG</span></h1>
-      <div class="hero-character-stage reveal delay-2" aria-hidden="true">
-        <div class="hero-character"><img src="hero-character-optimized.webp" width="800" height="1200" decoding="async" fetchpriority="high" alt=""></div>
-      </div>
-      <p class="hero-intro reveal delay-2"><strong>你好，我是刘柏杨。</strong><br>复旦大学国际商务硕士。现在想把商业问题看得更清楚一点，也把事情做得更扎实一点。<br>有想法，也愿意把事情接住，及时往前推。</p>
-      <div class="hero-tags reveal delay-2" aria-label="关注方向"><span>业务分析</span><span>策略运营</span><span>数据表达</span><span>AI 工作流</span></div>
-      <a class="hero-cta reveal delay-2" href="#contact">联系我 ↗</a>
-    </section>
-
-    <section class="panel focus" id="focus" data-panel="1">
-      <div class="panel-inner">
-        <div><p class="eyebrow">WHAT I CARE ABOUT</p><h2>我更在意，<br>一个问题到底卡在哪里。</h2><p class="panel-copy">很多事情表面是指标、流程或资源不够，往下看才会发现是口径、供给、协同方式或执行节奏出了问题。</p></div>
-        <div class="focus-list">
-          <article class="focus-item"><span>01</span><h3>经营到底有没有在发生</h3><p>把总量变化拆到具体场景，找出真正影响结果的环节。</p></article>
-          <article class="focus-item"><span>02</span><h3>模糊的问题怎么往前走</h3><p>把讨论变成能核对、能选择、也能执行的下一步。</p></article>
-          <article class="focus-item"><span>03</span><h3>重复劳动能不能少一点</h3><p>把资料、检查和表达整理成能复用的工作方式。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel education" id="education" data-panel="2">
-      <div class="panel-inner">
-        <div><p class="eyebrow">GROWTH PATH</p><h2>从郑州到上海，<br>我一直在学着看见真实的问题。</h2><p class="panel-copy">学校给我的不只是两段学历。郑大的项目和研究让我开始重视证据，复旦把我带进更大的商业语境，也让我更愿意把课堂外的事想明白。</p></div>
-        <div class="education-list">
-          <article class="education-item"><span class="school-mark">FDU</span><div><h3>复旦大学 · 国际商务硕士</h3><p>2025 至今。在国际商务、数据方法和现实业务之间来回切换，继续寻找适合自己的问题。</p></div></article>
-          <article class="education-item"><span class="school-mark">ZZU</span><div><h3>郑州大学 · 国际经济与贸易</h3><p>2021 - 2025。从市场调研、企业调查到毕业研究，慢慢学会把问题、数据和判断对应起来。</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel training" id="training" data-panel="3">
-      <div class="panel-inner">
-        <div><p class="eyebrow">TRAINING</p><h2>把材料做实，<br>再把判断说清楚。</h2><p class="panel-copy">我不太相信一上来就能有漂亮结论。先把资料看全、把口径对齐，结论才有可能站得住。</p></div>
-        <div class="training-list">
-          <article class="training-item"><h3>先把研究对象弄明白</h3><p>做过问卷、企业调查和毕业研究，也因此知道数据不会自己回答问题。</p></article>
-          <article class="training-item"><h3>把零散材料整理成结构</h3><p>表格、访谈、论文和业务资料放在一起看，才知道哪些能信，哪些还要再核对。</p></article>
-          <article class="training-item"><h3>让结论回到人和场景里</h3><p>分析不是为了把图表做得好看，而是为了让下一步讨论更具体。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel experience" id="experience" data-panel="4">
-      <div class="panel-inner">
-        <div><p class="eyebrow">IN THE FIELD</p><h2>四段实习，<br>让我知道业务不是纸面上的词。</h2><p class="panel-copy">公司名字可以公开，细节要有边界。这里留下我参与过的场景，不把内部数据和团队成果硬写成自己的。</p></div>
-        <div class="experience-list">
-          <article class="experience-card"><span>华创证券 · 机械行业研究</span><h3>把资料和数据，整理成能追溯的研究底稿</h3><p>参与公司专题、行业数据整理、业绩交流纪要核验和海外同业研究。</p><time>2025.04 - 2025.08</time></article>
-          <article class="experience-card"><span>得物 · 数据分析</span><h3>在需求波动里看人力与服务之间的平衡</h3><p>参与客服中心的日报、预测和人力调度相关数据支持。</p><time>2025.08 - 2025.10</time></article>
-          <article class="experience-card"><span>字节跳动 TikTok Shop · 策略运营</span><h3>把类目经营观察，接到商家与策略动作上</h3><p>参与海外电商的类目经营观察、商家运营和策略支持。</p><time>2026.01 - 2026.07</time></article>
-          <article class="experience-card"><span>京东秒送 · 商业分析</span><h3>从即时履约的复杂现场里找可分析的问题</h3><p>参与运力结构观察、经营分析和分析流程整理。</p><time>2026.07 - 2026.09</time></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel cases" id="cases" data-panel="5">
-      <div class="panel-inner">
-        <div><p class="eyebrow">SELECTED CASES</p><h2>我更想留下的，<br>是做判断的过程。</h2><p class="panel-copy">案例不追求把话说满。每一篇都会按问题、判断、行动路径和留下的产物来写，等公开边界逐一核对好再展开。</p></div>
-        <div class="case-list">
-          <article class="case-card"><span>RESEARCH</span><h3>公司和行业研究</h3><p>面对一手资料、历史数据和不同口径时，先把底稿做扎实，再讨论判断。</p></article>
-          <article class="case-card"><span>OPERATIONS</span><h3>需求与供给怎么匹配</h3><p>需求在变，人力和服务标准也在互相约束，分析要落到具体的调度选择。</p></article>
-          <article class="case-card"><span>DELIVERY</span><h3>即时履约里的结构问题</h3><p>把看起来临时的异常，重新放回运力、成本和履约之间理解。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel method" id="method" data-panel="6">
-      <div class="panel-inner">
-        <div><p class="eyebrow">HOW I WORK</p><h2>有想法，靠得住，<br>也能及时把事情往前推。</h2></div>
-        <div class="method-list">
-          <article class="method-item"><span>01</span><div><h3>先把问题说清楚</h3><p>先确认目标、口径和边界，别急着给答案。</p></div></article>
-          <article class="method-item"><span>02</span><div><h3>把能确定的和不能确定的分开</h3><p>有材料支撑的就说清楚，还没证实的就继续找。</p></div></article>
-          <article class="method-item"><span>03</span><div><h3>不等万事俱备才行动</h3><p>信息不完整时，也先把能推进的下一步接住。</p></div></article>
-          <article class="method-item"><span>04</span><div><h3>让下一次少走一点弯路</h3><p>把做过的事整理下来，给以后的人和自己留个入口。</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel ai-workbench" id="ai-workbench" data-panel="7">
-      <div class="panel-inner">
-        <div><p class="eyebrow">AI WORKBENCH</p><h2>AI 对我来说，<br>是把事情做顺手的工具。</h2><p class="panel-copy">我会用它帮我读材料、查证据、整理表达。但它给出的答案不能直接当结论，还是要回到原始信息里。</p></div>
-        <div class="workbench-list">
-          <article class="workbench-item"><h3>读材料</h3><p>先帮我搭起资料地图，知道哪些文档值得看，哪些问题还没被回答。</p></article>
-          <article class="workbench-item"><h3>查证据</h3><p>把说法、来源和边界放在一起，避免把计划、团队结果和个人工作混成一句话。</p></article>
-          <article class="workbench-item"><h3>做成可复用的东西</h3><p>把临时整理变成文档、案例库、小工具或这个持续更新的个人主页。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel now contact" id="contact" data-panel="8">
-      <div class="panel-inner"><div><p class="eyebrow">NOW</p><h2>这个主页会慢慢长，<br>但不会为了更新而更新。</h2><p class="panel-copy">接下来我会把可公开的案例、AI 工作流和学习记录逐步放进来。每一页都要经得起追问。</p><ul class="now-list"><li>整理 3 个可公开的代表案例</li><li>继续完善个人的 AI 工作流程</li><li>把 GitHub 上的作品做得更清楚一点</li></ul></div><div><p class="eyebrow">LET'S TALK</p><h2>如果你在找一个愿意把问题想清楚、也能把事情往前推的人，欢迎联系我。</h2><div class="contact-links"><a href="mailto:liuboyang123450@163.com">liuboyang123450@163.com</a><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div>
-      <footer class="contact-footer"><div class="panel-inner"><span>LIU BOYANG · PERSONAL HOMEPAGE</span><span>© 2026</span></div></footer>
-    </section>
+    <section class="panel hero paper-hero" id="home" data-panel="0" aria-label="见面"><div class="panel-inner hero-layout"><div class="reveal"><p class="hero-index">PERSONAL INDEX / 01</p><h1 class="hero-title"><span class="latin">LIU BOYANG</span><span>刘柏杨</span></h1><p class="hero-lead">你好，我是刘柏杨，复旦大学国际商务硕士。过去几年，我在不同业务场景里做过研究、运营与分析：从行业和公司研究，到客服运营，再到国际电商和即时配送。我的工作习惯，是从分散的材料、业务现场和数据口径里还原事实，把判断落到下一步能做什么。</p><div class="hero-roles"><span>华创证券 · 行业研究</span><span>得物 · 数据分析</span><span>字节跳动 · 国际电商运营</span><span>京东秒送 · 商业分析</span></div><div class="hero-tags"><span>复旦大学国际商务硕士</span><span>商业分析 / 策略运营</span></div></div><div class="portrait-notebook reveal delay-2"><span class="portrait-tape"></span><img class="hero-portrait" src="hero-character-optimized.webp" width="800" height="1200" fetchpriority="high" decoding="async" alt="刘柏杨的卡通形象"><div class="portrait-label"><strong>WORKING NOTE</strong>把问题说清楚，把判断做扎实。</div></div></div><span class="scroll-note">SCROLL TO READ</span></section>
+    <section class="panel focus" id="focus" data-panel="1"><div class="panel-inner focus-layout"><div class="reveal"><p class="eyebrow">HOW I START</p><h2>先把问题<br>说到同一个地方。</h2><p class="panel-copy">拿到一张报表，或者听到一句“最近指标不太好”，我一般不会马上找原因。很多时候，不是没有数据，而是大家说的“问题”还没有指向同一个地方。</p></div><div class="focus-rail reveal delay-1"><article class="focus-item"><span class="focus-number">01 / WHERE</span><h3>变化到底发生在哪里？</h3><p>先别急着解释涨跌。把时间、对象、环节和统计口径逐层拆开，确认它是整体变化，还是某一类商品、地区或用户带来的波动。</p></article><article class="focus-item"><span class="focus-number">02 / CHECK</span><h3>现场的解释和数据一致吗？</h3><p>数据能指出哪里不一样，但不一定直接告诉我们原因。我会把报表、业务流程和一线反馈放在一起，先把对不上的地方留下来。</p></article><article class="focus-item"><span class="focus-number">03 / NEXT</span><h3>下一步可以做什么？</h3><p>说明现在还缺哪块信息、最值得先动哪个环节、谁需要参与，以及之后看什么信号确认有没有效果。</p></article></div></div></section>
+    <section class="panel education" id="education" data-panel="2"><div class="panel-inner education-layout"><div class="reveal"><p class="eyebrow">EDUCATION / TRAINING</p><h2>教育给我的，<br>不只是两段学历。</h2><p class="panel-copy">郑大的项目和研究让我开始重视证据，复旦把我带进更大的商业语境。真正留下来的，是研究、表达、协作和组织责任在日常里反复练出来的稳定性。</p></div><div class="education-list reveal delay-1"><article class="school-card"><img class="school-emblem" src="assets/education/zhengzhou-university-emblem-clean.png" loading="lazy" decoding="async" alt="郑州大学校徽"><div><time>2021—2025</time><h3>郑州大学 · 国际经济与贸易</h3><p>从美团购药满意度调研、北京大学牵头的中小微企业调查（ESSIC），到毕业论文中的城市面板数据研究，本科让我练习把问题、样本、数据与结论一一对应。</p><div class="school-notes"><span>市场调研</span><span>企业调查</span><span>毕业研究</span></div></div></article><article class="school-card"><img class="school-emblem" src="assets/education/fudan-university-emblem-clean.png" loading="lazy" decoding="async" alt="复旦大学校徽"><div><time>2025—至今</time><h3>复旦大学 · 国际商务硕士</h3><p>国际商务、企业国际化、统计方法、国际金融、公司法与生成式 AI 都进入过课程讨论；团支书的日常协作，也让我更直接地练习组织、沟通与及时回应。</p><div class="school-notes"><span>课程分析</span><span>组织协作</span><span>研究方法</span></div></div></article></div></div></section>
+    <section class="panel training" id="training" data-panel="3"><div class="panel-inner training-layout"><div class="visual-window reveal"><img src="assets/visuals/research-desk.png" width="1536" height="1024" loading="lazy" decoding="async" alt="抽象研究桌面"><span class="image-caption">定义问题 / 核对证据 / 留下依据</span></div><div class="reveal delay-1"><p class="eyebrow">TRAINING / 04</p><h2>好看的材料，<br>不等于站得住的判断。</h2><div class="training-stack"><article class="training-item"><span>01</span><div><h3>先把判断对象说清楚</h3><p>问卷适合了解感受，访谈适合补充现场，公开数据和企业资料也各有边界。材料放在一起，不代表它们能回答同一个问题。</p></div></article><article class="training-item"><span>02</span><div><h3>比较之前，先核对口径</h3><p>单位、时间范围、统计对象，以及单月、累计和环比，常常比一个漂亮结论更早暴露问题。先确认大家看的是不是同一个东西。</p></div></article><article class="training-item"><span>03</span><div><h3>给判断留一条回去的路</h3><p>尽量保留来源、处理过程和关键判断。别人问“这个数从哪里来”“为什么这样判断”时，能够沿着材料回到依据。</p></div></article></div></div></div></section>
+    <section class="panel experience" id="experience" data-panel="4"><div class="panel-inner experience-layout"><div class="reveal"><p class="eyebrow">IN THE FIELD</p><h2>从看材料，<br>到看经营。</h2><p class="panel-copy">四段实习的场景不同，却有一条连续的线：从还原事实，到理解供需，再到在复杂约束里判断更可执行的一步。</p></div><div class="field-route reveal delay-1"><article class="field-row"><div class="field-meta">2025.04—08<br>RESEARCH</div><div><h3>华创证券 · 机械行业研究</h3><p>围绕公司专题、历史数据、订单与行业高频指标做资料追溯和交叉核对。研究的起点是把事实和口径做实，再区分周期波动、资产变化与经营改善。</p></div></article><article class="field-row"><div class="field-meta">2025.08—10<br>WFM</div><div><h3>得物 · 数据分析</h3><p>在客服 WFM 场景里，持续看需求、人力、排班、积压和 SLA 的关系。面对异常，会继续排查是供给不足、执行偏差，还是数据链路与统计口径的问题。</p></div></article><article class="field-row"><div class="field-meta">2026.01—07<br>OPERATIONS</div><div><h3>TikTok Shop · 策略运营</h3><p>在菲律宾 Lifestyle 类目中，参与经营分析和策略推进：把结果拆回商家、商品、价格、内容与履约环节，再明确需要优先推动的动作与协作节奏。</p></div></article><article class="field-row"><div class="field-meta">2026.07—08<br>ANALYSIS</div><div><h3>京东秒送 · 商业分析</h3><p>即时配送把视角拉向供给结构、订单需求、履约时效与成本效率的联动。分析不只解释指标，更需要在目标、资源和时效之间讲清取舍。</p></div></article></div></div></section>
+    <section class="panel cases" id="cases" data-panel="5"><div class="panel-inner case-layout"><div class="reveal"><p class="eyebrow">SELECTED CASES</p><h2>几段现场，<br>几种判断。</h2><p class="panel-copy">它们不是“项目清单”。每一段都从一个具体问题开始：先确认发生了什么，再找能落到下一步的解法。</p></div><div class="case-list reveal delay-1"><article class="case-item" data-case="01"><h3>公司沿革与行业高频数据</h3><p>把公开披露、历史数据与行业指标放回同一条事实链，区分资产变化、周期波动和经营改善。</p></article><article class="case-item" data-case="02"><h3>客服现场的需求与人力</h3><p>把来量、人力、排班、积压和服务时效一起看，寻找供需错配真正发生的时段与环节。</p></article><article class="case-item" data-case="03"><h3>SLA 异常的逐层排查</h3><p>不把异常只归因于“人不够”：继续核对派发、执行、数据链路和统计口径。</p></article><article class="case-item" data-case="04"><h3>类目经营的拆解与推进</h3><p>从商家、商品、价格、内容与履约拆开结果，再把优先动作和协作节奏往前推。</p></article><article class="case-item" data-case="05"><h3>即时配送中的取舍</h3><p>把供给结构、订单需求、履约时效和成本效率放进同一张图里，讨论可执行的平衡点。</p></article><article class="case-item" data-case="06"><h3>调研从问题开始</h3><p>从购药满意度调研到中小微企业调查，练习让问卷、访谈和公开信息各自回答该回答的问题。</p></article></div></div></section>
+    <section class="panel method" id="method" data-panel="6"><div class="panel-inner method-layout"><div class="reveal"><p class="eyebrow">HOW I WORK</p><h2>做事时，<br>我会先弄明白这些。</h2><p class="panel-copy">不是方法论口号，是几次实习和做项目之后，慢慢留下来的习惯。</p></div><div class="method-list reveal delay-1"><article class="method-item"><span>01</span><h3>先问清楚在看什么</h3><p>这个指标指谁、发生在哪一步、受什么限制？把对象弄清楚，才不会一上来就在错的地方使劲。</p></article><article class="method-item"><span>02</span><h3>没有依据，不急着下结论</h3><p>来源、口径和过程尽量留住。信息还不够，就直接说还要补什么，不把猜测说成事实。</p></article><article class="method-item"><span>03</span><h3>能往前推的，先接住</h3><p>很多事等不到所有信息齐全。先把下一步要谁配合、看什么信号说清楚，再根据反馈调整。</p></article><article class="method-item"><span>04</span><h3>重复做的事，留个步骤</h3><p>把检查项、模板或 SOP 留下来。下次自己少走弯路，交到别人手上也能接得住。</p></article></div></div></section>
+    <section class="panel ai" id="ai" data-panel="7"><div class="panel-inner ai-layout"><div class="ai-intro"><div class="reveal"><p class="eyebrow">AI WORKBENCH</p><h2>AI 是我的<br>工作台。</h2></div><div class="reveal delay-1"><p class="panel-copy" style="margin-top:0">在工作里，我会用 AI 帮忙整理零散材料、补检查项、搭一个 SOP 初稿；数据、口径和业务判断，仍要回到原始材料核对。涉及敏感信息，也不会放进个人工具链。</p><p class="panel-copy">在个人项目里，我先把问题说清楚，再让 AI 协助拆结构、写代码、排查问题。重点不是一次生成，而是做出来以后继续看、继续改。</p></div></div><div class="workflow reveal delay-1"><div class="workflow-node"><i>01</i><strong>问题</strong><span>先说清要做什么</span></div><div class="workflow-node"><i>02</i><strong>材料</strong><span>整理已有信息</span></div><div class="workflow-node"><i>03</i><strong>核对</strong><span>确认事实与口径</span></div><div class="workflow-node"><i>04</i><strong>原型</strong><span>把想法做出来</span></div><div class="workflow-node"><i>05</i><strong>修改</strong><span>根据使用再迭代</span></div></div><div class="github-projects reveal delay-2"><article class="github-project"><small>DATA TOOL</small><div><h3>DataReady</h3><p>浏览器本地运行的数据体检与安全清洗工具：先发现 Excel / CSV 的质量问题，再解释并处理。</p></div><a href="https://github.com/Henry369-0/dataready" target="_blank" rel="noreferrer">GitHub ↗</a></article><article class="github-project"><small>BUILD FLOW</small><div><h3>Say2Build</h3><p>给 AI 开发新手的轻量项目大脑：把模糊想法整理成真实状态与下一步构建任务。</p></div><a href="https://github.com/Henry369-0/say2build" target="_blank" rel="noreferrer">GitHub ↗</a></article><article class="github-project"><small>DESIGN TOOL</small><div><h3>Style DNA</h3><p>从参考图里拆出可复用的视觉规则，把灵感变成构成、字体、色彩与层级的设计语言。</p></div><a href="https://github.com/Henry369-0/style-dna" target="_blank" rel="noreferrer">GitHub ↗</a></article><article class="github-project"><small>DOCUMENT</small><div><h3>PageTrail</h3><p>面向批量交付的离线工具：根据资料与名单，生成多份个性化、可追溯的图片型 PDF。</p></div><a href="https://github.com/Henry369-0/pagetrail-batch" target="_blank" rel="noreferrer">GitHub ↗</a></article></div></div></section>
+    <section class="panel contact" id="contact" data-panel="8"><div class="panel-inner contact-layout"><div class="reveal"><p class="eyebrow">CONTACT / 09</p><h2>刘柏杨</h2><p class="panel-copy" style="color:rgba(248,246,240,.7)">商业分析、策略运营、研究与 AI 工作流。</p><ul class="contact-list"><li><span>EMAIL</span><a href="mailto:liuboyang123450@163.com">liuboyang123450@163.com</a></li><li><span>GITHUB</span><a href="https://github.com/Henry369-0" target="_blank" rel="noreferrer">Henry369-0 ↗</a></li><li><span>WECHAT</span><b>LBYprc0610</b></li></ul></div><div class="contact-card reveal delay-1"><img src="assets/visuals/liuboyang-word-cloud.png" width="1024" height="1280" loading="lazy" decoding="async" alt="商业分析、策略运营、研究、数据判断、业务现场、可靠、及时、皮实与 AI 工作流词云"></div></div></section>
   </main>
-
+  <aside class="detail-drawer" aria-hidden="true" data-open="false"><button class="drawer-backdrop" type="button" aria-label="关闭详情遮罩"></button><section class="drawer-sheet" role="dialog" aria-modal="true" aria-labelledby="drawer-title"><button class="drawer-close" type="button" aria-label="关闭详情">×</button><div class="drawer-content" id="drawer-content"></div></section></aside>
+  <template id="detail-focus"><p class="drawer-kicker">HOW I START</p><h2 id="drawer-title">我会先把问题说清楚</h2><h3>01 这个变化到底发生在哪里？</h3><p>先别急着解释涨跌。一个指标变了，可能是整体都在变，也可能只是某个时间段、某类商品、某个地区，或者一批用户拉动了结果。我会把时间、对象、环节和统计口径逐层拆开，先确认我们看到的是同一个变化，再去讨论它为什么发生。</p><h3>02 现场的解释和数据一致吗？</h3><p>数据能告诉我们哪里不一样，但不一定能直接告诉我们原因。我会把报表、业务流程和一线反馈放在一起看，遇到对不上的地方，先把疑点留下来，而不是急着选一个听起来最顺的解释。</p><h3>03 下一步可以做什么？</h3><p>最后至少应该讲清楚：还缺哪一块信息，最值得先动的是哪个环节，谁需要参与，以及改完以后看什么信号来判断有没有效果。能让事情往前走，比把结论写得很完整更重要。</p></template>
+  <template id="detail-education"><p class="drawer-kicker">EDUCATION / TRAINING</p><h2 id="drawer-title">教育与训练</h2><h3>郑州大学｜国际经济与贸易</h3><p>本科阶段，我在一个个具体题目里练习研究。美团购药满意度调研让我接触从问卷设计、样本回收到结果整理的过程，开始注意问题表述、样本构成和回答偏差会怎样影响判断。</p><p>参与由北京大学牵头的中小微企业调查（ESSIC）时，我需要面对具体业务对象：先理解企业在做什么，再把访谈、调查材料和公开信息放在一起核对，而不是只记录对方说了什么。毕业论文则练习变量定义、数据整理、模型分析和结果解释。</p><h3>复旦大学｜国际商务</h3><p>读研以后，国际商务、企业国际化、统计方法、国际金融、公司法和生成式 AI 都进入过课程与讨论。我也承担团支书的协调工作，在通知传达、活动组织、材料汇总与同学沟通中练习组织责任和及时回应。</p></template>
+  <template id="detail-training"><p class="drawer-kicker">TRAINING / 04</p><h2 id="drawer-title">好看的材料，不等于站得住的判断</h2><p>本科做调研和论文时，我逐渐养成了一个习惯：先把问题和判断对象说清楚，再决定需要什么材料。问卷适合了解感受，访谈适合补充现场，公开数据和企业资料也各有边界，不能因为材料放在一起，就把它们当成同一种证据。</p><p>后来做行业研究和经营分析，我仍然会先核对数据的单位、时间范围、统计对象，以及单月、累计和环比等口径。很多问题并不在计算过程，而在比较之前没有确认大家看的是不是同一个东西。</p><p>我会尽量留下来源、处理过程和关键判断。这样做未必最快，但当别人问“这个数从哪里来”“为什么这样判断”时，能够沿着材料回到依据。可靠不是把结论说得很满，而是把证据边界和仍待核对的地方讲清楚。</p></template>
+  <template id="detail-experience"><p class="drawer-kicker">IN THE FIELD</p><h2 id="drawer-title">四段业务现场</h2><h3>华创证券｜机械行业研究</h3><p>从年报、公告、业绩交流纪要、行业统计和公司公开披露中拼出相对完整的业务图景。面对收入变化，我会继续追问产品、客户、区域、订单和行业景气的传导，练习从公开材料中追溯事实、区分经营变化与周期波动。</p><h3>得物｜数据分析</h3><p>在客服 WFM 场景里，关注每天需要多少人、实际有多少人，以及供需错配如何影响服务表现。将需求、人力安排、排班执行、放休情况和 SLA 放在一起观察，再结合时段、团队和业务变化判断人力余缺。</p><h3>TikTok Shop｜策略运营</h3><p>在菲律宾 Lifestyle 类目的经营场景中，参与类目分析与策略推进。把结果拆回商家、商品、价格、内容和履约等环节，再整理优先问题、行动节奏和协作事项，持续确认动作是否真正传导到经营表现。</p><h3>京东秒送｜商业分析</h3><p>在即时配送场景中，供给结构、订单需求、履约时效、运力使用和成本表现会互相牵动。时间虽短，但它让我更直观地感受到：即时业务很少有孤立的最优解，关键是在多重约束下把取舍讲清楚。</p></template>
+  <template id="detail-ai"><p class="drawer-kicker">AI WORKBENCH</p><h2 id="drawer-title">AI 是我的工作台，不是人设</h2><p>我把 AI 放在问题定义、材料整理、结构搭建和快速验证这些环节里，帮助一件事更快进入可检查、可修改的状态。在工作中，先明确目标、对象、口径和交付要求，再让它协助完成资料归类、信息提取、问题拆解、检查清单和 SOP 初稿。</p><p>AI 生成的内容只能作为待核对的中间结果：数据来源、统计口径、事实表述和业务判断，仍必须回到原始材料、公开信息或实际流程中确认；涉及敏感信息时，不使用公司内部资料直接处理。</p><p>在个人项目里，我先定义要解决的问题和页面想表达的内容，再让 AI 协助拆分信息架构、设计页面结构、生成代码、处理数据结构和排查报错。跑起来之后，再通过实际使用观察交互、内容和视觉上的问题，继续修改，必要时推翻原来的方案。</p></template>
   <script>
     document.documentElement.classList.add('js');
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const desktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-    const panels = [...document.querySelectorAll('[data-panel]')].filter((item) => item.tagName === 'SECTION');
-    const controls = [...document.querySelectorAll('[data-target]')];
-    let activeIndex = 0;
-    let switching = false;
-
-    function setActive(index) {
-      activeIndex = Math.max(0, Math.min(index, panels.length - 1));
-      controls.forEach((control) => control.setAttribute('aria-current', String(Number(control.dataset.target) === activeIndex)));
-    }
-    function goTo(index) {
-      const next = Math.max(0, Math.min(index, panels.length - 1));
-      if (next === activeIndex || switching) return;
-      switching = true;
-      panels[next].scrollIntoView({ behavior: reduced.matches ? 'auto' : 'smooth', block: 'start' });
-      setActive(next);
-      window.setTimeout(() => { switching = false; }, reduced.matches ? 80 : 760);
-    }
-
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => { if (entry.isIntersecting) setActive(Number(entry.target.dataset.panel)); });
-      }, { threshold: .62 });
-      panels.forEach((panel) => observer.observe(panel));
-    }
-
-    window.addEventListener('wheel', (event) => {
-      if (!desktopPointer.matches || reduced.matches || Math.abs(event.deltaY) < 12) return;
-      event.preventDefault();
-      goTo(activeIndex + (event.deltaY > 0 ? 1 : -1));
-    }, { passive: false });
-
-    window.addEventListener('keydown', (event) => {
-      if (reduced.matches || ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-      if (['ArrowDown', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); goTo(activeIndex + 1); }
-      if (['ArrowUp', 'PageUp'].includes(event.key)) { event.preventDefault(); goTo(activeIndex - 1); }
-    });
-
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)'); const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)'); const panels=[...document.querySelectorAll('[data-panel]')].filter(item=>item.tagName==='SECTION'); const controls=[...document.querySelectorAll('[data-target]')]; const drawer=document.querySelector('.detail-drawer'); const content=document.querySelector('#drawer-content'); const closeButton=document.querySelector('.drawer-close'); let active=0; let switching=false; let trigger=null;
+    function setActive(index){active=Math.max(0,Math.min(index,panels.length-1));controls.forEach(control=>control.setAttribute('aria-current',String(Number(control.dataset.target)===active)))} function goTo(index){const next=Math.max(0,Math.min(index,panels.length-1));if(next===active||switching)return;switching=true;panels[next].scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'});setActive(next);window.setTimeout(()=>switching=false,reduced.matches?60:680)} function openDetail(name,button){const template=document.querySelector(`#detail-${name}`);if(!template)return;trigger=button;content.replaceChildren(template.content.cloneNode(true));drawer.dataset.open='true';drawer.setAttribute('aria-hidden','false');document.body.classList.add('drawer-open');closeButton.focus()} function closeDetail(){if(drawer.dataset.open!=='true')return;drawer.dataset.open='false';drawer.setAttribute('aria-hidden','true');document.body.classList.remove('drawer-open');if(trigger)trigger.focus()}
+    document.querySelectorAll('[data-detail]').forEach(button=>button.addEventListener('click',()=>openDetail(button.dataset.detail,button))); drawer.querySelector('.drawer-backdrop').addEventListener('click',closeDetail); closeButton.addEventListener('click',closeDetail); window.addEventListener('keydown',event=>{if(event.key==='Escape')closeDetail();if(drawer.dataset.open==='true'||reduced.matches||['INPUT','TEXTAREA'].includes(document.activeElement.tagName))return;if(['ArrowDown','PageDown',' '].includes(event.key)){event.preventDefault();goTo(active+1)}if(['ArrowUp','PageUp'].includes(event.key)){event.preventDefault();goTo(active-1)}}); if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)setActive(Number(entry.target.dataset.panel))}),{threshold:.62});panels.forEach(panel=>observer.observe(panel))} window.addEventListener('wheel',event=>{if(!finePointer.matches||reduced.matches||drawer.dataset.open==='true'||Math.abs(event.deltaY)<12)return;event.preventDefault();goTo(active+(event.deltaY>0?1:-1))},{passive:false});
   </script>
 </body>
 </html>
