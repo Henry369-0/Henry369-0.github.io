@@ -12,3 +12,12 @@
 - `avatar.png`：主页头像；
 - `avatar-github.jpg`：适合上传到 GitHub 的头像；
 - `.github/workflows/deploy.yml`：静态页面发布配置。
+
+## 验证
+
+内容检查可运行 `node tests/homepage-redesign.test.mjs`。用静态服务打开主页后，已安装 Playwright CLI 的开发者可以检查长章节阅读、导航名称、手机宽度和减少动画设置：
+
+```sh
+playwright-cli -s=homepage-check open http://localhost:8080
+playwright-cli -s=homepage-check run-code --filename=tests/homepage-navigation.browser.js
+```
